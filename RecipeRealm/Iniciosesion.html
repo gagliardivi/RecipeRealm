@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio web del servicio para patio de comidas, RecipeRealm, donde encontrarás chefs y sus restaurantes; junto con un recetario para que puedas realizar tus propias comidas.">
+    <meta name="keywords" content="RecipeRealm, recetas, comida, gastronomía, restaurante, chef, club, socios">
+    <meta name="author" content="Victoria Gagliardi, Agustina Godoy, Nicolás Savo">
+    <meta name="robots" content="www.reciperealm.com">
+    <meta name="publisher" content="instagram.com/reciperealm">
+    <title>Inicio de Sesión - RecipeRealm</title>
+    <link rel="stylesheet" href="Iniciosesion.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <img src="Imágenes/logo.png" alt="RecipeRealm" class="logo">
+            <form id="loginForm" action="/login" method="POST">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="login-button">Iniciar Sesión</button>
+            </form>
+            <p class="register-prompt">¿No tenés cuenta? <a href="registro.html">¡Regístrate aquí!</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Evitar que el formulario se envíe automáticamente
+            event.preventDefault();
+            
+            // Redirigir al usuario a la página deseada
+            window.location.href = '../Home.html';
+        });
+    </script>
+</body>
+</html>

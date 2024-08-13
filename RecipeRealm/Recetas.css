@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Centra el contenido del header */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+nav {
+    width: 100%; /* Asegura que el nav ocupe todo el ancho disponible */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro del ul */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.botonesnav{
+    padding-top: 15px;
+}
+
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    height: 20px;
+    color: black;
+    margin: 10px;
+}
+
+.botonesnav {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.botonesnav a:hover {
+    background-color: #ddd; /* Color de fondo en hover */
+    color: #800000; /* Color de texto en hover */
+}
+
+.botonesnav a.active {
+    background-color: #800000; /* Color de fondo para la pestaña activa */
+    color: white; /* Color de texto para la pestaña activa */
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+main {
+    padding-bottom: 20px;
+    margin: 0;
+    margin-left: 200px;
+}
+
+
+#lista{
+    width: 80%;
+    height: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+}
+.receta{
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    border-style:solid ;
+    width: 400px;
+    height: auto;
+    background-color: #861D22;
+    color: white;
+}
+
+.foto{
+    width: 400px;
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.boton{
+    background-color: #EAE5DF;
+    color: #861D22;
+    width: 130px;
+    height: 50px;
+    list-style: none;
+    padding: 8px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #EAE5DF; /* Cambia el color de fondo del botón */
+    border: none;
+    border-radius: 25px; /* Bordes más redondeados */
+    color: #800000; /* Color del texto en blanco */
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    transition: background-color 0.2s; /* Transición suave para el cambio de color */
+    z-index: 2;
+}
+
+button:hover {
+    background-color: #EAE5DF; /* Cambia el color de fondo al pasar el ratón */
+    color: #e41919;
+    box-shadow: black 10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+}

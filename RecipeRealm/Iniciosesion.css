@@ -1,0 +1,82 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('Imágenes/fondologin.jpg') no-repeat center center fixed; /* Cambia 'ruta/de/tu/imagen.jpg' por la ruta de tu imagen de fondo */
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #800000;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #800000;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.login-button {
+    width: 80%;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background-color: #b30000;
+}
+
+.register-prompt {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+}
+
+.register-prompt a {
+    color: #800000;
+    text-decoration: none;
+    font-weight: bold;
+}
