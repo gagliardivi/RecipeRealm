@@ -7,7 +7,7 @@
 
 <body>
 <h1> Reacipe Realm  <a href="https://recipe-realm-delta.vercel.app/">¡Mirá el proyecto acá!</a></h1> 
-<p>Lleva la alta cocina a tu hogar con RecipeRealm, donde chefs de renombre comparten sus recetas exclusivas y se promueven los restaurantes más destacados de un distinguido patio gastronómico.</p> 
+<p>En RecipeRealm, te conectamos con los mejores chefs y sus recetas exclusivas, promoviendo al mismo tiempo los destacados restaurantes de un distinguido patio gastronómico.</p> 
 <ul>  
   <li>Manual de marca</li>
   <li><a href= "https://drive.google.com/file/d/1-SKUXNXgY3o5LztFZmNITZmsehbrIL5_/view?pli=1">Userflow</a></li>
