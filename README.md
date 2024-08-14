@@ -11,8 +11,9 @@
 <ul>  
   <li>Manual de marca</li>
   <li>Userflow</li>
-  <li>Wireframes y diseño</li>
+  <li><a href= "https://www.figma.com/design/ozuTsBPOYc0cnqiqebqtEJ/RecipeRealm-Wireframe?node-id=0-1&t=TfKX90gWcmG6lLwm-1"> Wireframes y diseño</a></li>
 </ul>
+
 
 
 </body>
