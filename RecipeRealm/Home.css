@@ -44,9 +44,16 @@ nav a {
 }
 
 .botonesnav a:hover {
-    background-color: #ddd; /* Color de fondo en hover */
     color: #800000; /* Color de texto en hover */
 }
+
+.botonesnav:is(:hover) {
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+  transition-property: box-shadow, transform, background-color, color;
+    transition-duration: 0.5S;
+    transition-timing-function: ease;
+}
+
 
 .botonesnav a.active {
     background-color: #800000; /* Color de fondo para la pestaña activa */
@@ -57,7 +64,6 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 15px;
 }
 
 .logo img {
