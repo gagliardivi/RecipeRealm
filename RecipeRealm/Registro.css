@@ -1,47 +1,122 @@
-/* Ajustes generales */
-body {
-    font-family: 'Playfair Display', serif;
-}
-
-main {
-    padding: 20px;
-    margin: 0 auto;
-}
-
-#lista {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-    justify-content: center;
-    width: 100%;
-    padding: 0;
+/* Restablecer márgenes y padding */
+* {
     margin: 0;
-}
-
-.receta {
-    width: 100%; /* Full width en pantallas pequeñas */
-    max-width: 400px; /* Limitamos el ancho máximo */
-    margin: 10px;
-    padding: 10px;
-    border-style: solid;
-    background-color: #861D22;
-    color: white;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.foto {
-    width: 100%; /* Hacemos que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+body {
+    overflow: hidden; /* Evitar desplazamiento */
+    background-color: #f5f5f5;
 }
 
-/* Ajustes responsivos */
-@media (min-width: 600px) {
-    .receta {
-        width: 45%; /* 2 recetas por fila en pantallas medianas */
-    }
+.container {
+    display: flex;
+    min-height: 100vh;
 }
 
-@media (min-width: 900px) {
-    .receta {
-        width: 30%; /* 3 recetas por fila en pantallas grandes */
-    }
+.form-container {
+    flex: 1;
+    padding: 50px;
+    background-color: #f9f5f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form-container h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 36px;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #800000;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #800000;
+    border-radius: 5px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #800000;
+    font-weight: bold;
+}
+
+.password-requirements {
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.password-requirements li {
+    color: #800000;
+}
+
+.password-requirements li.valid {
+    color: green;
+}
+
+.password-requirements li.invalid {
+    color: red;
+}
+
+.register-button {
+    font-family: 'Playfair Display', sans-serif;
+    padding: 15px 30px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.register-button:hover {
+    background-color: #b30000;
+}
+
+.login-prompt {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.login-prompt a {
+    font-family: 'Open Sans', sans-serif;
+    color: #800000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.image-container {
+    height: 700px;
+    flex: 1;
+    background-image: url('Imágenes/registro-fondo.jpg');
+    background-size: cover; /* Cubrir todo el contenedor */
+    background-position: center;
 }
