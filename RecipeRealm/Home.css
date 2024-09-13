@@ -153,3 +153,16 @@ nav a {
             transition: background-color 0.2s; /* Transición suave para el cambio de color */
             z-index: 2;
         }
+
+        @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          
+          .fade-in {
+            animation: fadeIn 2s ease-in-out;
+          }
