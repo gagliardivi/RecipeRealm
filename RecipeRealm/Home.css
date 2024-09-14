@@ -5,36 +5,24 @@ body {
 
 header {
     display: flex;
-    justify-content: center; /* Centra el contenido del header */
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; /* Asegura que el texto esté centrado */
+    text-align: center;
 }
 
 nav {
-    width: 100%; /* Asegura que el nav ocupe todo el ancho disponible */
+    width: 100%;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center; /* Centra los elementos dentro del ul */
+    justify-content: center;
     gap: 20px;
     padding: 0;
     margin: 0;
-}
-
-.botonesnav{
-    padding-top: 15px;
-}
-
-nav a {
-    font-family: 'Open Sans', sans-serif;
-    text-decoration: none;
-    height: 20px;
-    color: black;
-    margin: 10px;
 }
 
 .botonesnav {
@@ -43,14 +31,21 @@ nav a {
     background-color: white;
 }
 
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+}
+
 .botonesnav a:hover {
-    background-color: #ddd; /* Color de fondo en hover */
-    color: #800000; /* Color de texto en hover */
+    background-color: #ddd;
+    color: #800000;
 }
 
 .botonesnav a.active {
-    background-color: #800000; /* Color de fondo para la pestaña activa */
-    color: white; /* Color de texto para la pestaña activa */
+    background-color: #800000;
+    color: white;
 }
 
 .logo {
@@ -78,91 +73,96 @@ nav a {
 .logo-home {
     display: flex;
     align-items: center;
-    padding: 10px 20px; 
-    border-radius: 10px; 
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
-
 .titulo-home {
-    margin-left: 20px; 
+    margin-left: 20px;
     font-size: 100px;
-    color:  #861d22; 
+    color: #861d22;
 }
 
 .titulo-home:hover {
-            color: white; 
-
+    color: white;
 }
- .Bienvenida {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            position: relative;
-        }
 
-        .bloque {
-            background-color: #861d22;
-			height: 50vh;
-            width: 100%;
-            z-index: 1;
-        }
+.Bienvenida {
+    width: 100%;
+    height: auto; /* Ajusta según tus necesidades */
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
 
-        .texto-bienvenida {
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            width: 50%; 
-            position: relative;
-            z-index: 2;
-            margin: 25% auto; 
-            box-sizing: border-box;
-            height: 200px;
-        }
+.bloque {
+    background-color: #861d22;
+    height: 20vh;
+    width: 100%;
+    position: relative; 
+    z-index: 1;
+}
 
-        .texto-bienvenida img {
-            max-width: 250px;
-            max-height: 250px;
-            margin-left: 20px;
-        }
+.texto-bienvenida {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: none;
+    position: relative; 
+    z-index: 2;
+    margin: 0;
+    box-sizing: border-box;
+    height: 200px;
+}
 
-        .texto-bienvenida p {
-            margin: 0;
-            padding-right: 20px;
-        }
+.texto-bienvenida img {
+    max-width: 250px;
+    max-height: 250px;
+    margin-left: 20px;
+}
 
+.texto-bienvenida p {
+    margin: 0;
+    padding-right: 20px;
+}
 
- .imagen-completa {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.ImagenHome {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 500px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
 
-        button {
-            padding: 10px 20px;
-            background-color: #EAE5DF; /* Cambia el color de fondo del botón */
-            border: none;
-            border-radius: 25px; /* Bordes más redondeados */
-            color: #800000; /* Color del texto en blanco */
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 16px; /* Tamaño de fuente */
-            font-weight: bold; /* Peso de la fuente */
-            transition: background-color 0.2s; /* Transición suave para el cambio de color */
-            z-index: 2;
-        }
+.ImagenHome img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
 
-        @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-          
-          .fade-in {
-            animation: fadeIn 2s ease-in-out;
-          }
+.imagen-completa {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #EAE5DF;
+    border: none;
+    border-radius: 25px;
+    color: #800000;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    z-index: 2;
+}
+
+    
