@@ -151,11 +151,12 @@ footer {
 }
 
 .texto-derecha ul {
-    list-style-type: disc;
+    list-style-type: none;
 }
 
 h2 {
     color: #861d22;
+    text-align: center;
 }
 
 .como-unirse {
