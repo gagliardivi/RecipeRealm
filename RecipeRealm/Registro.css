@@ -168,7 +168,6 @@ button:hover {
     width: 100%;
 }
 
-
 .form-container label {
     display: block;
     margin-bottom: 5px;
@@ -183,7 +182,6 @@ button:hover {
     border: 1px solid #800000;
     border-radius: 5px;
 }
-
 
 .password-container {
     position: relative;
@@ -217,7 +215,7 @@ button:hover {
     color: red;
 }
 
-.siguiente-button {
+.register-button {
     font-family: 'Playfair Display', sans-serif;
     padding: 15px 30px;
     background-color: #800000;
@@ -227,10 +225,9 @@ button:hover {
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-
 }
 
-.siguiente-button:hover {
+.register-button:hover {
     background-color: #b30000;
 }
 
