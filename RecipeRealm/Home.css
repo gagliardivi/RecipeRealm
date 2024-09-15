@@ -5,24 +5,62 @@ body {
 
 header {
     display: flex;
-    justify-content: center; /* Centra el contenido del header */
+    justify-content: center; 
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; /* Asegura que el texto esté centrado */
+    text-align: center; 
 }
 
 nav {
-    width: 100%; /* Asegura que el nav ocupe todo el ancho disponible */
+    width: 100%; 
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center; /* Centra los elementos dentro del ul */
+    justify-content: center;
     gap: 20px;
     padding: 0;
     margin: 0;
+}
+
+.submenu {
+    position: relative; 
+}
+
+.submenu-items {
+    display: none; /* Oculta el submenú */
+    position: absolute;
+    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    left: 0;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.submenu-items li {
+    list-style: none;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.submenu-items li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Muestra el submenú cuando se hace hover sobre el botón principal */
+.submenu:hover .submenu-items {
+    display: block;
+}
+
+/* Opcional: Estilos en hover para los enlaces del submenú */
+.submenu-items li a:hover {
+    color: #800000; 
 }
 
 .botonesnav{
@@ -44,26 +82,18 @@ nav a {
 }
 
 .botonesnav a:hover {
-    color: #800000; /* Color de texto en hover */
+    color: #800000; 
 }
-
-.botonesnav:is(:hover) {
-  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
-  transition-property: box-shadow, transform, background-color, color;
-    transition-duration: 0.5S;
-    transition-timing-function: ease;
-}
-
-
 .botonesnav a.active {
-    background-color: #800000; /* Color de fondo para la pestaña activa */
-    color: white; /* Color de texto para la pestaña activa */
+    background-color: #800000; 
+    color: white; 
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15px;
 }
 
 .logo img {
@@ -159,3 +189,11 @@ nav a {
             transition: background-color 0.2s; /* Transición suave para el cambio de color */
             z-index: 2;
         }
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+}
