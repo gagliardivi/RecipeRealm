@@ -189,3 +189,11 @@ nav a {
             transition: background-color 0.2s; /* Transición suave para el cambio de color */
             z-index: 2;
         }
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+}
