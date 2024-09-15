@@ -22,8 +22,8 @@ function ValidarFormulario() {
     const usuario = document.getElementById("usuario").value.trim();
     const email = document.getElementById("email").value.trim();
     const contraseña = document.getElementById("password").value;
-    const suscripcionClub = document.getElementById("suscripcionClub").checked;
-    const telefono = document.getElementById("telefono").value.trim();
+    const suscripcionClub = document.getElementById("suscripcionClub")?.checked;
+    const telefono = document.getElementById("telefono")?.value.trim();
     let validador = true;
 
     // Validar el usuario
@@ -75,7 +75,12 @@ function ValidarFormulario() {
         }
     }
 
-    return validador;
+    if (validador) {
+        // Redirige al inicio de sesión si el formulario es válido
+        window.location.href = 'Iniciosesion.html';
+    }
+
+    return false; // Previene el envío del formulario para manejar la redirección manualmente
 }
 
 document.addEventListener('DOMContentLoaded', () => {

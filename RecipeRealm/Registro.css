@@ -2,6 +2,8 @@
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
 }
 
 header {
@@ -94,23 +96,23 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1%;
 }
 
 .logo img {
-    height: 40px;
+    height: 40px
 }
 
 .container {
     display: flex;
     flex-direction: column; /* Alineación vertical para evitar espacio innecesario */
-    padding: 2%;
     max-width: 100%;
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
 .form-container {
     width: 100%;
-    max-width: 600px; /* Limita el ancho máximo para evitar grandes espacios en pantallas grandes */
+    max-width: 700px; /* Limita el ancho máximo para evitar grandes espacios en pantallas grandes */
     margin: 0 auto; /* Centra el contenedor */
     padding: 2%;
 }
@@ -118,7 +120,7 @@ nav a {
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaciado uniforme entre los elementos */
+    gap: 5px; /* Espaciado uniforme entre los elementos */
 }
 
 label {
@@ -234,8 +236,7 @@ button:hover {
 /* Estilos del formulario del Club de Socios */
 #clubForm {
     margin-top: 2%;
-    padding: 2%;
-    background-color: #f1f1f1;
+    padding-right: 2%;
     border-radius: 10px;
 }
 
