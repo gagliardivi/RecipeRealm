@@ -199,8 +199,8 @@ h2 {
 
 .contenedor-como-unirse {
     display: flex;
-    justify-content: center; /* Distribuye el contenido a los lados */
-    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; 
+    align-items: center; 
     padding: 50px 20px;
     background-color: #fff;
 }
@@ -208,7 +208,7 @@ h2 {
 
 .como-unirse {
     font-size: 19px;
-    width: 40%; /* Ocupa el 50% de la pantalla a la izquierda */
+    width: 40%; 
     color: #fff;
     background-color: #861d22;
     padding: 50px 50px;
@@ -216,12 +216,23 @@ h2 {
 }
 
 .imagen-unirse {
-    width: 45%; /* Ocupa el 50% de la pantalla a la derecha */
+    width: 45%; 
     text-align: right;
 }
 
 .imagen-unirse img {
-    max-width: 80%; /* Asegura que la imagen ocupe el 100% de su contenedor */
+    max-width: 80%;
     height: auto;
 
+}
+
+a {
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration:underline;
 }
