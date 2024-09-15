@@ -251,3 +251,10 @@ button:hover {
     background-size: cover; /* Cubrir todo el contenedor */
     background-position: center;
 }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+}
