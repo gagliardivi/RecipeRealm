@@ -23,8 +23,6 @@
                 <li><button class="botonesnav"><a href="Chef.html">Chefs</a></button></li>
                 <li class="logo"><a href="index.html"><img src="Imágenes/logo.png" alt="RecipeRealm Logo"></a></li>
                 <li><button class="botonesnav"><a href="Recetas.html">Recetas</a></button></li>
-                
-                <!-- Aquí está el botón de Club de Socios con el submenú -->
                 <li class="submenu">
                     <button class="botonesnav"><a href="Registro.html">Club de Socios</a></button>
                     <ul class="submenu-items">
@@ -60,28 +58,32 @@
                 </ul>
     
                 <!-- Checkbox para suscripción al Club de Socios -->
-                <label>
-                    <input type="checkbox" id="suscripcionClub" onclick="toggleClubForm()"> ¿Te gustaría unirte al Club de Socios?
+                <label class="checkbox-label">
+                    ¿Te gustaría unirte al Club de Socios?
+                    <input type="checkbox" id="suscripcionClub" onclick="openModal()">
                 </label>
-    
-                <!-- Formulario del Club de Socios (oculto por defecto) -->
-                <div id="clubForm" style="display:none;">
-                    <h2>Club de Socios</h2>
-    
-                    <label for="direccion">Dirección Domiciliaria</label>
-                    <input type="text" id="direccion" name="direccion">
-    
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" id="telefono" name="telefono" pattern="(11|15)[0-9]{8}" required>
-                    <span id="ErrorTelefono" style="visibility:hidden;color:red;">Teléfono inválido, debe empezar con 11 o 15 y tener 10 dígitos.</span>
-                </div>
     
                 <button type="submit" class="register-button">Crear cuenta</button>
             </form>
             <p class="login-prompt">¿Ya tenés una cuenta? <a href="Iniciosesion.html">Ingresá aquí</a></p>
         </div>
-        <div class="club-form-container">
-            <!-- Aquí se encuentra el formulario del Club de Socios -->
+    </div>
+    
+    <!-- Modal para el Club de Socios -->
+    <div id="clubModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Club de Socios</h2>
+            <form id="clubForm">
+                <label for="direccion">Dirección Domiciliaria</label>
+                <input type="text" id="direccion" name="direccion">
+    
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" pattern="(11|15)[0-9]{8}" required>
+                <span id="ErrorTelefono" style="visibility:hidden;color:red;">Teléfono inválido, debe empezar con 11 o 15 y tener 10 dígitos.</span>
+                
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </div>
     
