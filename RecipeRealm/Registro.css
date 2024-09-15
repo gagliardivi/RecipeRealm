@@ -64,7 +64,7 @@ nav ul {
     color: #800000; 
 }
 
-.botonesnav{
+.botonesnav {
     padding-top: 15px;
 }
 
@@ -85,6 +85,7 @@ nav a {
 .botonesnav a:hover {
     color: #800000; 
 }
+
 .botonesnav a.active {
     background-color: #800000; 
     color: white; 
@@ -102,26 +103,23 @@ nav a {
 
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Alineación al inicio para evitar espacio innecesario */
+    flex-direction: column; /* Alineación vertical para evitar espacio innecesario */
     padding: 2%;
     max-width: 100%;
-    overflow: auto; /* Permite el desplazamiento si es necesario */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
 .form-container {
-    width: 60%;
-    padding: 2%;
-}
-
-.club-container {
-    width: 35%;
+    width: 100%;
+    max-width: 600px; /* Limita el ancho máximo para evitar grandes espacios en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor */
     padding: 2%;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 10px; /* Espaciado uniforme entre los elementos */
 }
 
 label {
@@ -143,6 +141,7 @@ input {
 h1 {
     font-family: 'Playfair Display', sans-serif;
     font-size: 2.5em;
+    margin-top: 1%;
     margin-bottom: 1%;
     color: #800000;
 }
@@ -182,12 +181,12 @@ button:hover {
 }
 
 .password-container input {
-    width: 100%;
+    width: calc(100% - 100px); /* Asegura el espacio para el botón */
 }
 
 .toggle-password {
     position: absolute;
-    right: 1%;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -195,12 +194,20 @@ button:hover {
 }
 
 /* Estilos para los requisitos de la contraseña */
+.password-requirements-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+}
+
 .password-requirements {
     list-style-type: none;
     padding: 0;
-    margin-top: 2%;
+    margin: 0;
     font-family: 'Open Sans', sans-serif;
     color: red;
+    font-size: 0.9em;
 }
 
 .password-requirements li {
@@ -211,6 +218,21 @@ button:hover {
     color: green;
 }
 
+.join-club-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.join-club-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del formulario del Club de Socios */
 #clubForm {
     margin-top: 2%;
     padding: 2%;
@@ -293,3 +315,13 @@ span {
     cursor: pointer;
 }
 
+/* Estilos para el enlace del Club de Socios */
+.club-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.club-link:hover {
+    color: #0056b3;
+}

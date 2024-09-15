@@ -51,18 +51,18 @@
                     <span class="toggle-password" onclick="togglePasswordVisibility()">Mostrar</span>
                 </div>
     
-                <ul class="password-requirements">
-                    <li id="length" class="invalid">● Más de 8 caracteres</li>
-                    <li id="uppercase" class="invalid">● Una letra mayúscula</li>
-                    <li id="number" class="invalid">● Un número</li>
-                </ul>
+                <div class="password-requirements-container">
+                    <ul class="password-requirements">
+                        <li id="length" class="invalid">● Más de 8 caracteres</li>
+                        <li id="uppercase" class="invalid">● Una letra mayúscula</li>
+                        <li id="number" class="invalid">● Un número</li>
+                    </ul>
+                     <!-- Enlace para suscripción al Club de Socios -->
+                <p class="club-link" onclick="openModal()">¿Te gustaría unirte al Club de Socios?</p>
     
-                <!-- Checkbox para suscripción al Club de Socios -->
-                <label class="checkbox-label">
-                    ¿Te gustaría unirte al Club de Socios?
-                    <input type="checkbox" id="suscripcionClub" onclick="openModal()">
-                </label>
+                </div>
     
+               
                 <button type="submit" class="register-button">Crear cuenta</button>
             </form>
             <p class="login-prompt">¿Ya tenés una cuenta? <a href="Iniciosesion.html">Ingresá aquí</a></p>
