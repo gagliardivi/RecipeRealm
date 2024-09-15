@@ -75,36 +75,8 @@ function ValidarFormulario() {
         }
     }
 
-    if (validador) {
-        // Redirige al inicio de sesión si el formulario es válido
-        window.location.href = 'Iniciosesion.html';
-    }
-
-    return false; // Previene el envío del formulario para manejar la redirección manualmente
+    return validador;
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const passwordInput = document.getElementById('password');
-    const lengthRequirement = document.getElementById('length');
-    const uppercaseRequirement = document.getElementById('uppercase');
-    const numberRequirement = document.getElementById('number');
-
-    passwordInput.addEventListener('input', () => {
-        const contraseña = passwordInput.value;
-
-        // Validar longitud
-        lengthRequirement.classList.toggle('valid', contraseña.length > 8);
-        lengthRequirement.classList.toggle('invalid', contraseña.length <= 8);
-
-        // Validar mayúscula
-        uppercaseRequirement.classList.toggle('valid', /[A-Z]/.test(contraseña));
-        uppercaseRequirement.classList.toggle('invalid', !/[A-Z]/.test(contraseña));
-
-        // Validar número
-        numberRequirement.classList.toggle('valid', /\d/.test(contraseña));
-        numberRequirement.classList.toggle('invalid', !/\d/.test(contraseña));
-    });
-});
 
 // Función para abrir el modal
 function openModal() {
@@ -117,3 +89,59 @@ function closeModal() {
     const modal = document.getElementById('clubModal');
     modal.style.display = 'none';
 }
+
+// Función para guardar los datos de registro en localStorage
+function guardarRegistro(email, usuario, contraseña, esAdmin = false) {
+    // Obtener los registros existentes de localStorage
+    let registros = localStorage.getItem('registros');
+
+    // Si no hay registros, inicializamos como un objeto vacío
+    if (!registros) {
+        registros = {};
+    } else {
+        // Parseamos los registros existentes de JSON a objeto
+        registros = JSON.parse(registros);
+    }
+
+    // Crear el objeto de usuario
+    const nuevoUsuario = {
+        usuario: usuario,
+        contraseña: contraseña,
+        esAdmin: esAdmin // Esto indica si el usuario es un administrador
+    };
+
+    // Agregar el nuevo usuario al objeto de registros
+    registros[email] = nuevoUsuario;
+
+    // Guardar de nuevo en localStorage en formato JSON
+    localStorage.setItem('registros', JSON.stringify(registros));
+
+    console.log("Registro guardado exitosamente.");
+}
+
+// Función para manejar el registro
+function manejarRegistro() {
+    if (ValidarFormulario()) {
+        const usuario = document.getElementById("usuario").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const contraseña = document.getElementById("password").value;
+
+        // Diferenciar si es admin o no
+        let esAdmin = false;
+        if (email === "admin@gmail.com") {
+            esAdmin = true;
+        }
+
+        // Guardamos los datos en localStorage
+        guardarRegistro(email, usuario, contraseña, esAdmin);
+
+        // Redirigir al inicio de sesión
+        window.location.href = "Iniciosesion.html";
+    }
+}
+
+// Asignamos la función al evento de submit del formulario
+document.getElementById("registroForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío tradicional del formulario
+    manejarRegistro();
+});
