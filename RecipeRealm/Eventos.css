@@ -117,7 +117,7 @@ footer {
 .texto-principal {
     text-align: center;
     padding: 50px 20px;
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 .texto-principal h1 {
@@ -152,6 +152,7 @@ footer {
 
 .texto-derecha ul {
     list-style-type: none;
+    text-align: center;
 }
 
 h2 {
@@ -167,13 +168,10 @@ h2 {
     background-color: #fff;
 }
 
-.titulo-como p{
-    font-size: 30px;
-}
+
 .como-unirse {
     font-size: 19px;
     width: 40%; /* Ocupa el 50% de la pantalla a la izquierda */
-    text-align: left;
     color: #fff;
     background-color: #861d22;
     padding: 50px 50px;
@@ -181,7 +179,7 @@ h2 {
 }
 
 .imagen-unirse {
-    width: 40%; /* Ocupa el 50% de la pantalla a la derecha */
+    width: 45%; /* Ocupa el 50% de la pantalla a la derecha */
     text-align: right;
 }
 
