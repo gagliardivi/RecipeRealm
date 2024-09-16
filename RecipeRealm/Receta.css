@@ -231,7 +231,16 @@ ul {
     justify-content: center;
     gap: 10px;
 }
-
+.button-empezarguardar {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: auto; 
+    padding: 20px; 
+}
+.button-empezarguardar button {
+    margin: 0 10px; 
+}
 footer {
     text-align: center;
     background-color: #800000;

@@ -208,12 +208,10 @@ button {
     z-index: 2;
 }
 
+
 footer {
     text-align: center;
+    padding: 10px;
     background-color: #800000;
     color: white;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
