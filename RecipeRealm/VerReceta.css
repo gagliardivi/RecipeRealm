@@ -134,6 +134,9 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #800000;
-    
+    color: white;
     margin-top: auto;
+    width: 100%;
+    box-sizing: border-box; 
 }
+
