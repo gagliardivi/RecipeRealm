@@ -179,21 +179,33 @@ ul {
     color: white;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+}
+
+.chef-link,
+.chef-recipes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .chef-link {
     text-decoration: none;
     color: inherit;
     z-index: 3;
+    margin-right: 20px; /* Espacio entre los divs */
 }
 
 .chef-info {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chef-background {
@@ -220,8 +232,23 @@ ul {
 
 .chef-recipes {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 20px;
+    z-index: 2;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #EAE5DF;
+    border: none;
+    border-radius: 15px;
+    color: #800000;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
     z-index: 2;
 }
 
@@ -230,17 +257,20 @@ ul {
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    align-items: center;
 }
+
 .button-empezarguardar {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: auto; 
-    padding: 20px; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
+
 .button-empezarguardar button {
-    margin: 0 10px; 
+    margin: 0 10px;
 }
+
 footer {
     text-align: center;
     background-color: #800000;
@@ -250,3 +280,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
