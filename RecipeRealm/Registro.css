@@ -315,7 +315,7 @@ span {
     cursor: pointer;
 }
 
-/* Estilos para el enlace del Club de Socios */
+
 .club-link {
     color: #007bff;
     cursor: pointer;
@@ -325,3 +325,14 @@ span {
 .club-link:hover {
     color: #0056b3;
 }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
