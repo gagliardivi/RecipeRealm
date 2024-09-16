@@ -49,3 +49,6 @@ function updateStep() {
     imagen.src = receta[numeropaso].imagen;
     imagen.alt = "Imagen del paso " + (numeropaso + 1);
 }
+
+
+
