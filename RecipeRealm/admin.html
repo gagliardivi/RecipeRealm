@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Panel de administración de RecipeRealm.">
+    <meta name="keywords" content="admin, recetas, gestión">
+    <meta name="author" content="Victoria Gagliardi, Agustina Godoy, Nicolás Savo">
+    <meta name="robots" content="www.reciperealm.com">
+    <meta name="publisher" content="instagram.com/reciperealm">
+    <title>Administración - RecipeRealm</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="admin.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Admin - RecipeRealm</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Agregar Receta</h2>
+            <form id="agregar-receta-form">
+                <label for="nombre-receta">Nombre de la receta:</label>
+                <input type="text" id="nombre-receta" required>
+                <label for="url-imagen">URL de la imagen:</label>
+                <input type="url" id="url-imagen" required>
+                <button type="submit">Agregar Receta</button>
+            </form>
+        </section>
+        <section>
+            <h2>Buscar y Gestionar Recetas</h2>
+            <input type="text" id="busqueda-receta" placeholder="Buscar receta...">
+            <ul id="lista-recetas-admin">
+                <!-- Lista de recetas con botones de editar y eliminar -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RecipeRealm. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

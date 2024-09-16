@@ -1,0 +1,99 @@
+/* Admin.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #800000;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #EAE5DF;
+    border: none;
+    border-radius: 25px;
+    color: #800000;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #EAE5DF;
+    color: #e41919;
+    box-shadow: black 10px;
+}
+
+#lista-recetas-admin {
+    list-style-type: none;
+    padding: 0;
+}
+
+.receta {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    border-style: solid;
+    width: 400px;
+    background-color: #861D22;
+    color: white;
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.editar-btn, .eliminar-btn {
+    background-color: #EAE5DF;
+    color: #861D22;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.editar-btn:hover, .eliminar-btn:hover {
+    background-color: #e41919;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+}
