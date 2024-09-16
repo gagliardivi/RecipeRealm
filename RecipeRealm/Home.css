@@ -27,8 +27,16 @@ nav ul {
 
 .botonesnav {
     padding: 10px;
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    padding: 10px 20px;
     border-radius: 15px;
-    background-color: white;
+   
+    color: black;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    transform: scale(1);
 }
 
 nav a {
@@ -46,7 +54,18 @@ nav a {
 .botonesnav a.active {
     background-color: #800000;
     color: white;
+nav a:hover {
+   
+    color: #800000;
+    transform: scale(1.1); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
 }
+
+nav a.active {
+    background-color: #800000;
+   
+}
+
 
 .logo {
     display: flex;
@@ -167,4 +186,3 @@ footer {
     color: white;
 }
 
-    

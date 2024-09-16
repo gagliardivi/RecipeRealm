@@ -1,7 +1,7 @@
 var recetas = [{
 
     "Receta":"Pastel de papa",
-    "foto": "https://www.recetas-argentinas.com/base/stock/Recipe/317-image/317-image_web.jpg"
+    "foto": "Imágenes/pasteldepapa.jpg"
 
 },{
 
