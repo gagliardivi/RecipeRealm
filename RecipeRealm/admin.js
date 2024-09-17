@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const esAdmin = true; // Cambiar según la autenticación real
+    const esAdmin = true; 
 
     if (!esAdmin) {
         document.body.innerHTML = '<h1>No tienes permisos para acceder a esta página.</h1>';
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const busquedaRecetaInput = document.getElementById('busqueda-receta');
     const listaRecetasAdmin = document.getElementById('lista-recetas-admin');
 
-    let modoEdicionIndex = null; // Para controlar el índice de la receta en edición
+    let modoEdicionIndex = null; 
 
     function cargarRecetas() {
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const foto = document.createElement('img');
             foto.classList.add('foto');
-            foto.src = receta.imagen; // Verifica que esta URL sea correcta
+            foto.src = receta.imagen; 
 
             const editarBtn = document.createElement('button');
             editarBtn.textContent = 'Editar';
@@ -63,17 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
         
         if (modoEdicionIndex !== null) {
-            // Editar receta existente
+           
             recetasGuardadas[modoEdicionIndex] = receta;
-            modoEdicionIndex = null; // Reseteamos el índice de edición
+            modoEdicionIndex = null; 
         } else {
-            // Agregar nueva receta
+           
             recetasGuardadas.push(receta);
         }
 
         localStorage.setItem('recetas', JSON.stringify(recetasGuardadas));
 
-        // Limpiar campos y recargar recetas
+      
         nombreRecetaInput.value = '';
         urlImagenInput.value = '';
         agregarRecetaForm.reset();
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nombreRecetaInput.value = receta.nombre;
         urlImagenInput.value = receta.imagen;
 
-        // Cambiar el índice de edición
+      
         modoEdicionIndex = index;
     }
 
