@@ -3,43 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Panel de administración de RecipeRealm.">
-    <meta name="keywords" content="admin, recetas, gestión">
-    <meta name="author" content="Victoria Gagliardi, Agustina Godoy, Nicolás Savo">
-    <meta name="robots" content="www.reciperealm.com">
-    <meta name="publisher" content="instagram.com/reciperealm">
-    <title>Administración - RecipeRealm</title>
-    <link rel="stylesheet" href="admin.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <script src="admin.js" defer></script>
+    <title>Admin - RecipeRealm</title>
+    <link rel="stylesheet" href="Admin.css">
+    <script src="Admin.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Admin - RecipeRealm</h1>
+        <!-- Aquí va el contenido del header -->
     </header>
     <main>
-        <section>
-            <h2>Agregar Receta</h2>
-            <form id="agregar-receta-form">
-                <label for="nombre-receta">Nombre de la receta:</label>
-                <input type="text" id="nombre-receta" required>
-                <label for="url-imagen">URL de la imagen:</label>
-                <input type="url" id="url-imagen" required>
-                <button type="submit">Agregar Receta</button>
-            </form>
-        </section>
-        <section>
-            <h2>Buscar y Gestionar Recetas</h2>
-            <input type="text" id="busqueda-receta" placeholder="Buscar receta...">
-            <ul id="lista-recetas-admin">
-                <!-- Lista de recetas con botones de editar y eliminar -->
-            </ul>
-        </section>
+        <h1>Agregar Receta</h1>
+        <form id="recipeForm">
+            <label for="recipeName">Nombre de la receta:</label>
+            <input type="text" id="recipeName" required>
+            
+            <label for="recipeImage">Imagen de la receta:</label>
+            <input type="url" id="recipeImage" required>
+            
+            <label for="ingredients">Ingredientes:</label>
+            <textarea id="ingredients" rows="12" placeholder="Lista de ingredientes, cada uno en una línea" required></textarea>
+            
+            <h2>Pasos de la receta</h2>
+            <!-- Campos para los pasos de la receta -->
+            <div id="stepsContainer">
+                <div class="step">
+                    <label for="step1">Paso 1:</label>
+                    <textarea id="step1" required></textarea>
+                    <label for="stepImage1">Imagen del paso 1:</label>
+                    <input type="url" id="stepImage1" required>
+                </div>
+                <div class="step">
+                    <label for="step2">Paso 2:</label>
+                    <textarea id="step2" required></textarea>
+                    <label for="stepImage2">Imagen del paso 2:</label>
+                    <input type="url" id="stepImage2" required>
+                </div>
+                <div class="step">
+                    <label for="step3">Paso 3:</label>
+                    <textarea id="step3" required></textarea>
+                    <label for="stepImage3">Imagen del paso 3:</label>
+                    <input type="url" id="stepImage3" required>
+                </div>
+                <div class="step">
+                    <label for="step4">Paso 4:</label>
+                    <textarea id="step4" required></textarea>
+                    <label for="stepImage4">Imagen del paso 4:</label>
+                    <input type="url" id="stepImage4" required>
+                </div>
+                <div class="step">
+                    <label for="step5">Paso 5:</label>
+                    <textarea id="step5" required></textarea>
+                    <label for="stepImage5">Imagen del paso 5:</label>
+                    <input type="url" id="stepImage5" required>
+                </div>
+                <div class="step">
+                    <label for="step6">Paso 6:</label>
+                    <textarea id="step6" required></textarea>
+                    <label for="stepImage6">Imagen del paso 6:</label>
+                    <input type="url" id="stepImage6" required>
+                </div>
+            </div>
+            
+            <button type="submit">Agregar Receta</button>
+        </form>
     </main>
     <footer>
-        <p>&copy; 2024 RecipeRealm. Todos los derechos reservados.</p>
+        <!-- Aquí va el contenido del footer -->
     </footer>
 </body>
 </html>
