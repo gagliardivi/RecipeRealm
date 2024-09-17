@@ -1,22 +1,21 @@
-/* Restablecer márgenes y padding */
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #f1f1f1;
+
 }
 
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; 
+    text-align: center;
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul {
@@ -29,17 +28,17 @@ nav ul {
 }
 
 .submenu {
-    position: relative; 
+    position: relative;
 }
 
 .submenu-items {
-    display: none; /* Oculta el submenú */
+    display: none;
     position: absolute;
-    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    top: 100%;
     left: 0;
     background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
 }
@@ -56,133 +55,92 @@ nav ul {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Muestra el submenú cuando se hace hover sobre el botón principal */
 .submenu:hover .submenu-items {
     display: block;
 }
 
-/* Opcional: Estilos en hover para los enlaces del submenú */
 .submenu-items li a:hover {
-    color: #800000; 
+    color: #800000;
 }
 
-.botonesnav{
-    padding-top: 15px;
+.botonesnav {
+    padding: 10px;
 }
 
 nav a {
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    height: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
     color: black;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    transform: scale(1);
     margin: 10px;
 }
 
-.botonesnav {
-    padding: 10px;
-    border-radius: 15px;
-    background-color: white;
+.botonesnav a:hover {
+    color: #800000;
 }
 
-.botonesnav a:hover {
-    color: #800000; 
+botonesnav a.active {
+    background-color: #800000;
 }
-.botonesnav a.active {
-    background-color: #800000; 
-    color: white; 
+
+nav a:hover {
+    color: #800000;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+    background-color: #800000;
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1%;
+    padding-bottom: 15px;
 }
 
 .logo img {
-    height: 40px
+    height: 40px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column; /* Alineación vertical para evitar espacio innecesario */
-    max-width: 100%;
-    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-container {
-    width: 100%;
-    max-width: 700px; /* Limita el ancho máximo para evitar grandes espacios en pantallas grandes */
-    margin: 0 auto; /* Centra el contenedor */
-    padding: 2%;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Espaciado uniforme entre los elementos */
 }
 
 label {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    margin-top: 1%;
-    color: #800000;
+    margin: 10px 0 5px;
 }
 
-input {
-    width: 100%;
-    padding: 1%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    border: 1px solid #800000;
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-h1 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 2.5em;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    color: #800000;
-}
-
-button {
-    padding: 1%;
-    border-radius: 15px;
-    background-color: #800000;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    border: none;
-    margin-top: 2%;
-}
-
-button:hover {
-    background-color: white;
-    color: #800000;
-    cursor: pointer;
-}
-
-.login-prompt {
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 2%;
-}
-
-.login-prompt a {
-    color: #800000;
-    text-decoration: none;
-}
-
-.login-prompt a:hover {
-    text-decoration: underline;
+    font-size: 1em;
 }
 
 .password-container {
     position: relative;
-}
-
-.password-container input {
-    width: calc(100% - 100px); /* Asegura el espacio para el botón */
 }
 
 .toggle-password {
@@ -191,139 +149,61 @@ button:hover {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    color: #800000;
-}
-
-/* Estilos para los requisitos de la contraseña */
-.password-requirements-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 2%;
 }
 
 .password-requirements {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    color: red;
     font-size: 0.9em;
+    color: #999;
 }
 
-.password-requirements li {
-    margin-top: 1%;
+.invalid {
+    color: red;
 }
 
-.password-requirements .valid {
+.valid {
     color: green;
 }
 
-.join-club-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
+.register-button {
+    padding: 10px;
+    background-color: #333;
     color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
 }
 
-.join-club-button:hover {
-    background-color: #0056b3;
+.register-button:hover {
+    background-color: #575757;
 }
 
-/* Estilos del formulario del Club de Socios */
-#clubForm {
-    margin-top: 2%;
-    padding-right: 2%;
-    border-radius: 10px;
+.login-prompt {
+    text-align: center;
+    margin-top: 20px;
 }
 
-#clubForm h2 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 1.5em;
-    color: #800000;
-    margin-bottom: 1%;
-}
-
-#clubForm label {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    margin-top: 1%;
-    color: #800000;
-}
-
-#clubForm input {
-    width: 100%;
-    padding: 1%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    border: 1px solid #800000;
-    border-radius: 5px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    margin-top: 2%;
-}
-
-.checkbox-label input {
-    margin-left: 1%;
-}
-
-span {
-    font-size: 0.75em;
-    font-family: 'Open Sans', sans-serif;
-}
-
-/* Modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-.club-link {
-    color: #007bff;
-    cursor: pointer;
+.login-prompt a {
+    color: #333;
     text-decoration: underline;
 }
 
-.club-link:hover {
-    color: #0056b3;
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Estilos para tarjeta y CVV */
+input[type="text"][name="tarjeta"],
+input[type="text"][name="cvv"] {
+    font-family: monospace;
+    letter-spacing: 1px;
 }
 
 footer {
