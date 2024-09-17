@@ -90,33 +90,86 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
-// Función para guardar los datos de registro en localStorage
-function guardarRegistro(email, usuario, contraseña, esAdmin = false) {
-    // Obtener los registros existentes de localStorage
-    let registros = localStorage.getItem('registros');
+// Función para formatear el número de tarjeta con guiones
+function formatearTarjeta(value) {
+    // Eliminar todos los caracteres no numéricos
+    value = value.replace(/\D/g, '');
 
-    // Si no hay registros, inicializamos como un objeto vacío
-    if (!registros) {
-        registros = {};
-    } else {
-        // Parseamos los registros existentes de JSON a objeto
-        registros = JSON.parse(registros);
+    // Agregar guiones después de cada 4 dígitos
+    const partes = [];
+    for (let i = 0; i < value.length; i += 4) {
+        partes.push(value.substring(i, i + 4));
     }
 
-    // Crear el objeto de usuario
-    const nuevoUsuario = {
+    return partes.join('-');
+}
+
+// Función para manejar el evento de entrada en el campo de tarjeta
+function manejarInputTarjeta(event) {
+    const input = event.target;
+    input.value = formatearTarjeta(input.value);
+}
+
+// Función para guardar los datos de registro
+function guardarDatosRegistro(usuario, email, contraseña, esAdmin) {
+    // Creamos un objeto con los datos del usuario
+    const datosUsuario = {
         usuario: usuario,
+        email: email,
         contraseña: contraseña,
-        esAdmin: esAdmin // Esto indica si el usuario es un administrador
+        esAdmin: esAdmin
     };
 
-    // Agregar el nuevo usuario al objeto de registros
-    registros[email] = nuevoUsuario;
+    // Almacenamos el objeto en localStorage (puede usarse sessionStorage también si se prefiere)
+    localStorage.setItem(email, JSON.stringify(datosUsuario));
+}
 
-    // Guardar de nuevo en localStorage en formato JSON
-    localStorage.setItem('registros', JSON.stringify(registros));
+// Función para guardar la información adicional del modal
+function guardarInformacionAdicional() {
+    const direccion = document.getElementById('direccion').value.trim();
+    const telefonoClub = document.getElementById('telefonoClub').value.trim();
+    const tarjeta = document.getElementById('tarjeta').value.trim();
+    const cvv = document.getElementById('cvv').value.trim();
 
-    console.log("Registro guardado exitosamente.");
+    // Validar el formato del número de tarjeta y CVV
+    const tarjetaRegex = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+    const cvvRegex = /^\d{3}$/;
+
+    if (!tarjetaRegex.test(tarjeta)) {
+        alert('Número de tarjeta inválido. Debe tener el formato XXXX-XXXX-XXXX-XXXX.');
+        return;
+    }
+
+    if (!cvvRegex.test(cvv)) {
+        alert('CVV inválido. Debe tener exactamente 3 dígitos.');
+        return;
+    }
+
+    if (direccion && telefonoClub) {
+        // Obtener el usuario actual (debe definirse cómo obtener este dato)
+        const usuarioEmail = document.getElementById('email').value.trim();
+        
+        // Recuperar los datos del usuario del localStorage
+        const datosUsuario = JSON.parse(localStorage.getItem(usuarioEmail));
+        if (datosUsuario) {
+            // Agregar la información adicional
+            datosUsuario.direccion = direccion;
+            datosUsuario.telefono = telefonoClub;
+            datosUsuario.tarjeta = tarjeta;
+            datosUsuario.cvv = cvv;
+
+            // Guardar de nuevo en localStorage
+            localStorage.setItem(usuarioEmail, JSON.stringify(datosUsuario));
+
+            // Cerrar el modal
+            closeModal();
+            alert('Información adicional guardada exitosamente.');
+        } else {
+            alert('No se encontraron datos para este usuario.');
+        }
+    } else {
+        alert('Por favor complete todos los campos.');
+    }
 }
 
 // Función para manejar el registro
@@ -133,10 +186,10 @@ function manejarRegistro() {
         }
 
         // Guardamos los datos en localStorage
-        guardarRegistro(email, usuario, contraseña, esAdmin);
+        guardarDatosRegistro(usuario, email, contraseña, esAdmin);
 
-        // Redirigir al inicio de sesión
-        window.location.href = "Iniciosesion.html";
+        // Abrir el modal para información adicional
+        openModal();
     }
 }
 
@@ -145,3 +198,9 @@ document.getElementById("registroForm").addEventListener("submit", function(even
     event.preventDefault(); // Evita el envío tradicional del formulario
     manejarRegistro();
 });
+
+// Asignamos el formato automático del número de tarjeta al campo correspondiente
+document.getElementById('tarjeta').addEventListener('input', manejarInputTarjeta);
+
+// Asignar la función al botón de guardar información adicional en el modal
+document.getElementById('guardarInformacion').addEventListener('click', guardarInformacionAdicional);

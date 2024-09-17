@@ -71,20 +71,20 @@
         </div>
     </div>
     
-    <!-- Modal para el Club de Socios -->
+    <!-- Popup (Modal) -->
     <div id="clubModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Club de Socios</h2>
             <form id="clubForm">
-                <label for="direccion">Dirección Domiciliaria</label>
-                <input type="text" id="direccion" name="direccion">
-    
-                <label for="telefono">Teléfono</label>
-                <input type="text" id="telefono" name="telefono" pattern="(11|15)[0-9]{8}" required>
-                <span id="ErrorTelefono" style="visibility:hidden;color:red;">Teléfono inválido, debe empezar con 11 o 15 y tener 10 dígitos.</span>
-                
-                <button type="submit">Enviar</button>
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="telefono">Número de Teléfono</label>
+                <input type="text" id="telefono" name="telefono" required>
+                <label for="tarjeta">Número de Tarjeta</label>
+                <input type="text" id="tarjeta" name="tarjeta" required maxlength="19" placeholder="XXXX-XXXX-XXXX-XXXX">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required maxlength="3" pattern="\d{3}">
+                <button type="button" onclick="guardarDatosPopup()">Guardar</button>
             </form>
         </div>
     </div>
