@@ -6,15 +6,15 @@ body {
 
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; 
+    text-align: center;
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul {
@@ -26,18 +26,18 @@ nav ul {
     margin: 0;
 }
 
-
 .submenu {
-    position: relative; 
+    position: relative;
 }
 
 .submenu-items {
-    display: none; 
+    display: none;
     position: absolute;
-    top: 100%; 
+    top: 100%;
+    left: 0;
     background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
 }
@@ -59,33 +59,11 @@ nav ul {
 }
 
 .submenu-items li a:hover {
-    color: #800000; 
-}
-
-.botonesnav{
-    padding-top: 15px;
-}
-
-nav a {
-    font-family: 'Open Sans', sans-serif;
-    text-decoration: none;
-    height: 20px;
-    color: black;
-    margin: 10px;
+    color: #800000;
 }
 
 .botonesnav {
     padding: 10px;
-    border-radius: 15px;
-    background-color: white;
-}
-
-.botonesnav a:hover {
-    color: #800000; 
-}
-.botonesnav a.active {
-    background-color: #800000; 
-    color: white; 
 }
 
 nav a {
@@ -97,25 +75,32 @@ nav a {
     transition: all 0.4s ease-in-out;
     display: inline-block;
     transform: scale(1);
+    margin: 10px;
+}
+
+.botonesnav a:hover {
+    color: #800000;
+}
+
+botonesnav a.active {
+    background-color: #800000;
 }
 
 nav a:hover {
     color: #800000;
-    transform: scale(1.1); 
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a.active {
     background-color: #800000;
-    color: white;
-
 }
-
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15px;
 }
 
 .logo img {
@@ -136,18 +121,19 @@ nav a.active {
 .logo-home {
     display: flex;
     align-items: center;
-    padding: 10px 20px; 
-    border-radius: 10px; 
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
-
 .titulo-home {
-    margin-left: 20px; 
+    margin-left: 20px;
     font-size: 100px;
-    color:  #861d22; 
+    color: #861d22;
 }
 
 .titulo-home:hover {
+<<<<<<< HEAD
+=======
             color: white; 
 
 }
@@ -213,14 +199,13 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #800000;
+>>>>>>> dcab1fc0c0b5f1cfbb5b63bab5606782c288f947
     color: white;
-
 }
-
 
 .Bienvenida {
     width: 100%;
-    height: auto; /* Ajusta según tus necesidades */
+    height: auto;
     padding: 0;
     margin: 0;
     position: relative;
@@ -230,7 +215,7 @@ footer {
     background-color: #861d22;
     height: 20vh;
     width: 100%;
-    position: relative; 
+    position: relative;
     z-index: 1;
 }
 
@@ -243,7 +228,7 @@ footer {
     padding: 20px;
     width: 100%;
     max-width: none;
-    position: relative; 
+    position: relative;
     z-index: 2;
     margin: 0;
     box-sizing: border-box;
@@ -265,29 +250,22 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: auto; 
+    height: auto;
     background-color: #f0f0f0;
     overflow: hidden;
 }
 
 .ImagenHome img {
-    width: 100%; 
-    height: auto; 
-    object-fit: contain; 
-}
-
-
-.imagen-completa {
-    width: 50%;
+    max-width: 80%;
     height: auto;
-    display: block;
+    object-fit: cover;
 }
 
 button {
     padding: 10px 20px;
     background-color: #EAE5DF;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     color: #800000;
     cursor: pointer;
     margin-top: 10px;
@@ -302,4 +280,81 @@ footer {
     padding: 10px;
     background-color: #800000;
     color: white;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 5px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .titulo-home {
+        font-size: 50px;
+    }
+
+    .texto-bienvenida {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .texto-bienvenida img {
+        max-width: 150px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .texto-bienvenida p {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .HomeImagen {
+        height: 50vh;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .titulo-home {
+        font-size: 40px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .texto-bienvenida {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
 }

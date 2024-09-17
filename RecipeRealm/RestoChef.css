@@ -107,17 +107,15 @@ main {
 .restaurant-intro {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 40px;
-}
-
-#textoubi {
-    color: #919191;
+    padding: 20px;
 }
 
 .restaurant-text {
     flex: 1;
     padding: 20px;
+    max-width: 50%;
 }
 
 .restaurant-text h1 {
@@ -131,11 +129,25 @@ main {
     font-size: 20px;
 }
 
-.restaurant-image img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
+.restaurant-image {
+    flex: 1;
+    max-width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.restaurant-image img {
+    width: 80%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-image img:hover {
+    transform: scale(1.1);
+}
+
 
 .chef {
     position: relative; /* Necesario para que los hijos posicionados absolutamente se basen en este contenedor */

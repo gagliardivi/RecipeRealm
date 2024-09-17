@@ -5,15 +5,15 @@ body {
 
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; 
+    text-align: center;
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul {
@@ -25,18 +25,44 @@ nav ul {
     margin: 0;
 }
 
+nav li {
+    position: relative;
+}
+
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: black;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    transform: scale(1);
+}
+
+nav a:hover {
+    color: #800000;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+    background-color: #800000;
+    color: white;
+}
+
 .submenu {
-    position: relative; 
+    position: relative;
 }
 
 .submenu-items {
-    display: none; /* Oculta el submenú */
+    display: none;
     position: absolute;
-    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    top: 100%;
     left: 0;
     background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
 }
@@ -53,46 +79,19 @@ nav ul {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Muestra el submenú cuando se hace hover sobre el botón principal */
 .submenu:hover .submenu-items {
     display: block;
 }
 
-/* Opcional: Estilos en hover para los enlaces del submenú */
 .submenu-items li a:hover {
-    color: #800000; 
-}
-
-.botonesnav{
-    padding-top: 15px;
-}
-
-nav a {
-    font-family: 'Open Sans', sans-serif;
-    text-decoration: none;
-    height: 20px;
-    color: black;
-    margin: 10px;
-}
-
-.botonesnav {
-    padding: 10px;
-    border-radius: 15px;
-    background-color: white;
-}
-
-.botonesnav a:hover {
-    color: #800000; 
-}
-.botonesnav a.active {
-    background-color: #800000; 
-    color: white; 
+    color: #800000;
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15px;
 }
 
 .logo img {
@@ -101,14 +100,18 @@ nav a {
 
 main {
     padding-bottom: 20px;
-    margin: 0; /* Elimina el margen del main */
+    margin: 0;
 }
 
 .restaurant-intro {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 40px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
 }
 
 #textoubi {
@@ -118,50 +121,93 @@ main {
 .restaurant-text {
     flex: 1;
     padding: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .restaurant-text h1 {
     color: #800000;
     font-size: 50px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .restaurant-text p {
     font-family: 'Open Sans', sans-serif;
     color: black;
     font-size: 20px;
-    margin-right: 30px;
+    margin: 10px 0;
+}
+
+.restaurant-text li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.restaurant-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 400px;
+    background-color: #e0e0e0;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
 .restaurant-image img {
     width: 100%;
     height: auto;
-    max-width: 500px;
-    margin-top: 90px;
+    max-width: 100%;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.restaurant-image:hover img {
+    transform: scale(1.1);
 }
 
 .chef {
-    position: relative; /* Necesario para que los hijos posicionados absolutamente se basen en este contenedor */
+    position: relative;
     background-color: #800000;
     color: white;
     padding: 20px;
-    text-align: left;
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos del chef y recetas a los extremos */
-    align-items: flex-start;
-    gap: 20px; /* Espacio entre la info del chef y las recetas */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
+.chef-link,
+.chef-recipes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
 
 .chef-link {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Asegura que el color del texto del enlace herede el color actual */
-    z-index: 3; /* Posiciona la información del chef delante de la imagen de fondo */
+    text-decoration: none;
+    color: inherit;
+    z-index: 3;
+    margin-right: 20px; /* Espacio entre los divs */
 }
 
 .chef-info {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chef-background {
@@ -170,98 +216,70 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Posiciona la imagen detrás de los elementos */
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
-    opacity: 0.5; /* Ajusta la opacidad si es necesario */
-}
-
-.chef-link {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Asegura que el color del texto del enlace herede el color actual */
-    z-index: 2; /* Posiciona la información del chef delante de la imagen de fondo */
-}
-
-.chef-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    z-index: 2;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 1;
 }
 
 .chef-info img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-right: 20px;
-    z-index: 2;
 }
 
 .chef-descripcion {
     font-family: 'Playfair Display', sans-serif;
-    text-align: left;
-    margin-right: 20px;
     font-size: 25px;
 }
 
 .chef-recipes {
-    margin-top: 30px;
     display: flex;
-    flex-direction: column; /* Asegura que las recetas y el botón estén en columna */
-    align-items: flex-end; /* Alinea el contenido a la derecha */
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     z-index: 2;
 }
 
-.chef-recipes img {
-    padding-left: 25px;
-    padding-right: 25px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+button {
+    padding: 10px 20px;
+    background-color: #EAE5DF;
+    border: none;
+    border-radius: 15px;
+    color: #800000;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
     z-index: 2;
 }
 
 .button-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-    z-index: 2;
+    gap: 10px;
+    align-items: center;
 }
 
-
-.button-empezarguardar{
-    list-style-type: none;
+.button-empezarguardar {
     display: flex;
-    justify-content: center; /* Centra los elementos dentro del ul */
-    gap: 20px;
-    padding: 0;
-    margin: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #EAE5DF; /* Cambia el color de fondo del botón */
-    border: none;
-    border-radius: 25px; /* Bordes más redondeados */
-    color: #800000; /* Color del texto en blanco */
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 16px; /* Tamaño de fuente */
-    font-weight: bold; /* Peso de la fuente */
-    transition: background-color 0.2s; /* Transición suave para el cambio de color */
-    z-index: 2;
+.button-empezarguardar button {
+    margin: 0 10px;
 }
-
-button:hover {
-    background-color: #EAE5DF; /* Cambia el color de fondo al pasar el ratón */
-    color: #e41919;
-    box-shadow: black 10px;
-}
-
 
 footer {
     text-align: center;
-    padding: 10px;
     background-color: #800000;
     color: white;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
+
