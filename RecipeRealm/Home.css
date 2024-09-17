@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -133,6 +134,74 @@ nav a.active {
 }
 
 .titulo-home:hover {
+<<<<<<< HEAD
+=======
+            color: white; 
+
+}
+ .Bienvenida {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+    
+
+        .texto-bienvenida {
+            background-color:#861d22;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            width: 80%; 
+            position: relative;
+            z-index: 2;
+            margin: 25% auto; 
+            box-sizing: border-box;
+            height: 500px;
+        }
+
+        .texto-bienvenida img {
+            max-width: 500px;
+            max-height: 500px;
+            margin-left: 20px;
+        }
+
+        .texto-bienvenida p {
+            margin: 0;
+            padding-right: 20px;
+            font-size: 25px;
+        }
+
+
+ .imagen-completa {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #EAE5DF; 
+            border: none;
+            border-radius: 25px; 
+            color: #800000;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px; 
+            font-weight: bold;
+            transition: background-color 0.2s; 
+            z-index: 2;
+        }
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+>>>>>>> dcab1fc0c0b5f1cfbb5b63bab5606782c288f947
     color: white;
 }
 

@@ -57,12 +57,112 @@ nav a {
     height: 40px;
 }
 
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    text-align: center; 
+}
+
+nav {
+    width: 100%; 
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu {
+    position: relative; 
+}
+
+.submenu-items {
+    display: none; /* Oculta el submenú */
+    position: absolute;
+    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    left: 0;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.submenu-items li {
+    list-style: none;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.submenu-items li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Muestra el submenú cuando se hace hover sobre el botón principal */
+.submenu:hover .submenu-items {
+    display: block;
+}
+
+/* Opcional: Estilos en hover para los enlaces del submenú */
+.submenu-items li a:hover {
+    color: #800000; 
+}
+
+.botonesnav{
+    padding-top: 15px;
+}
+
+nav a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    height: 20px;
+    color: black;
+    margin: 10px;
+}
+
+.botonesnav {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.botonesnav a:hover {
+    color: #800000; 
+}
+.botonesnav a.active {
+    background-color: #800000; 
+    color: white; 
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
 main {
     padding-bottom: 20px;
     margin: 0;
     margin-left: 200px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dcab1fc0c0b5f1cfbb5b63bab5606782c288f947
 #lista {
     width: 80%;
     height: auto;
@@ -70,6 +170,7 @@ main {
     padding: 0;
     margin: 0;
     text-align: center;
+<<<<<<< HEAD
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -119,15 +220,45 @@ main {
     left: 0;
 }
 
+=======
+}
+
+.receta {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    border-style: solid;
+    width: 400px;
+    height: auto;
+    background-color: #861D22;
+    color: white;
+    text-align: center; /* Centrar contenido dentro de la receta */
+}
+
+.foto {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+>>>>>>> dcab1fc0c0b5f1cfbb5b63bab5606782c288f947
 .boton {
     background-color: #EAE5DF;
     color: #861D22;
     width: 130px;
-    height: 50px;
+    height: 20px;
     list-style: none;
     padding: 8px;
     border-radius: 25px;
     text-decoration: none;
+<<<<<<< HEAD
+=======
+    display: inline-block; /* Para mantener el botón inline */
+    margin-top: 10px; /* Espacio entre la imagen y el botón */
+}
+
+.button-container {
+>>>>>>> dcab1fc0c0b5f1cfbb5b63bab5606782c288f947
     display: flex;
     align-items: center;
     justify-content: center;

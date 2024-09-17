@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin - RecipeRealm</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Panel de Administración</h1>
+    </header>
+    <main>
+        <h1>Agregar Receta</h1>
+        <form id="agregar-receta-form">
+            <label for="nombre-receta">Nombre de la receta:</label>
+            <input type="text" id="nombre-receta" required>
+            
+            <label for="url-imagen">Imagen de la receta:</label>
+            <input type="url" id="url-imagen" required>
+            
+            <button type="submit">Agregar Receta</button>
+        </form>
+        
+        <h2>Recetas Disponibles</h2>
+        <input type="text" id="busqueda-receta" placeholder="Buscar receta...">
+        <ul id="lista-recetas-admin"></ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 RecipeRealm. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
