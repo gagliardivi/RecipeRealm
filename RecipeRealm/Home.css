@@ -132,8 +132,6 @@ nav a.active {
 }
 
 .titulo-home:hover {
-<<<<<<< HEAD
-=======
             color: white; 
 
 }
@@ -199,7 +197,6 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #800000;
->>>>>>> dcab1fc0c0b5f1cfbb5b63bab5606782c288f947
     color: white;
 }
 
