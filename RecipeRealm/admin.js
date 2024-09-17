@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificar si el usuario es admin
     const esAdmin = true; // Cambiar según la autenticación real
 
     if (!esAdmin) {
@@ -7,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Referencias a los elementos del DOM
     const agregarRecetaForm = document.getElementById('agregar-receta-form');
     const nombreRecetaInput = document.getElementById('nombre-receta');
     const urlImagenInput = document.getElementById('url-imagen');
     const busquedaRecetaInput = document.getElementById('busqueda-receta');
     const listaRecetasAdmin = document.getElementById('lista-recetas-admin');
 
-    // Función para cargar todas las recetas (predeterminadas + LocalStorage)
+    let modoEdicionIndex = null; // Para controlar el índice de la receta en edición
+
     function cargarRecetas() {
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
         listaRecetasAdmin.innerHTML = '';
@@ -22,20 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
         recetasGuardadas.forEach((receta, index) => {
             const elemento = document.createElement('li');
             elemento.classList.add('receta');
+            
             const titulo = document.createElement('h1');
             titulo.textContent = receta.nombre;
+
             const foto = document.createElement('img');
             foto.classList.add('foto');
-            foto.src = receta.imagen;
+            foto.src = receta.imagen; // Verifica que esta URL sea correcta
+
             const editarBtn = document.createElement('button');
             editarBtn.textContent = 'Editar';
             editarBtn.classList.add('editar-btn');
             editarBtn.onclick = () => editarReceta(index);
+
             const eliminarBtn = document.createElement('button');
             eliminarBtn.textContent = 'Eliminar';
             eliminarBtn.classList.add('eliminar-btn');
             eliminarBtn.onclick = () => eliminarReceta(index);
-            
+
             elemento.appendChild(titulo);
             elemento.appendChild(foto);
             elemento.appendChild(editarBtn);
@@ -44,11 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para agregar nueva receta
     function agregarReceta(event) {
         event.preventDefault();
 
-        // Validar campos
         if (!nombreRecetaInput.value || !urlImagenInput.value) {
             alert('Por favor, completa todos los campos requeridos.');
             return;
@@ -60,15 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
-        recetasGuardadas.push(receta);
+        
+        if (modoEdicionIndex !== null) {
+            // Editar receta existente
+            recetasGuardadas[modoEdicionIndex] = receta;
+            modoEdicionIndex = null; // Reseteamos el índice de edición
+        } else {
+            // Agregar nueva receta
+            recetasGuardadas.push(receta);
+        }
+
         localStorage.setItem('recetas', JSON.stringify(recetasGuardadas));
+
+        // Limpiar campos y recargar recetas
         nombreRecetaInput.value = '';
         urlImagenInput.value = '';
         agregarRecetaForm.reset();
         cargarRecetas();
     }
 
-    // Función para editar receta
     function editarReceta(index) {
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
         const receta = recetasGuardadas[index];
@@ -76,22 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
         nombreRecetaInput.value = receta.nombre;
         urlImagenInput.value = receta.imagen;
 
-        // Reemplazar receta en el LocalStorage
-        agregarRecetaForm.onsubmit = function(event) {
-            event.preventDefault();
-            receta.nombre = nombreRecetaInput.value;
-            receta.imagen = urlImagenInput.value;
-
-            recetasGuardadas[index] = receta;
-            localStorage.setItem('recetas', JSON.stringify(recetasGuardadas));
-            nombreRecetaInput.value = '';
-            urlImagenInput.value = '';
-            agregarRecetaForm.reset();
-            cargarRecetas();
-        };
+        // Cambiar el índice de edición
+        modoEdicionIndex = index;
     }
 
-    // Función para eliminar receta
     function eliminarReceta(index) {
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
         recetasGuardadas.splice(index, 1);
@@ -99,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cargarRecetas();
     }
 
-    // Función para buscar recetas
     function buscarRecetas() {
         const terminoBusqueda = busquedaRecetaInput.value.toLowerCase();
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
@@ -122,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 eliminarBtn.textContent = 'Eliminar';
                 eliminarBtn.classList.add('eliminar-btn');
                 eliminarBtn.onclick = () => eliminarReceta(index);
-                
+
                 elemento.appendChild(titulo);
                 elemento.appendChild(foto);
                 elemento.appendChild(editarBtn);
@@ -132,10 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event Listeners
     agregarRecetaForm.addEventListener('submit', agregarReceta);
     busquedaRecetaInput.addEventListener('input', buscarRecetas);
 
-    // Inicializar la carga de recetas al cargar la página
     cargarRecetas();
 });

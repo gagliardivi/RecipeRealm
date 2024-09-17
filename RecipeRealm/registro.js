@@ -1,5 +1,4 @@
-// Validar el formulario antes de enviar
-document.getElementById('registerForm').addEventListener('submit', function(event) {
+document.getElementById('registroForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que la página se recargue
 
     // Si la validación es exitosa, guarda los datos en LocalStorage y redirige
@@ -13,21 +12,32 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         const tarjeta = document.getElementById('tarjeta').value;
         const cvv = document.getElementById('cvv').value;
 
-        // Guarda los datos en LocalStorage
-        const datosUsuario = {
+        // Obtén los datos existentes en LocalStorage
+        const registros = localStorage.getItem('registros');
+        const usuariosRegistrados = registros ? JSON.parse(registros) : { usuarios: [] };
+
+        // Asegúrate de que usuariosRegistrados.usuarios sea un array
+        if (!Array.isArray(usuariosRegistrados.usuarios)) {
+            usuariosRegistrados.usuarios = [];
+        }
+
+        // Agrega el nuevo usuario
+        usuariosRegistrados.usuarios.push({
             usuario: usuario,
             email: email,
-            password: password,
+            password: password, // Guarda la contraseña tal cual
             direccion: direccion,
             telefono: telefono,
             tarjeta: tarjeta,
-            cvv: cvv
-        };
+            cvv: cvv,
+            rol: 'usuario' // Aquí se puede ajustar según el rol que se desee
+        });
 
-        localStorage.setItem('usuario', JSON.stringify(datosUsuario)); // Guarda los datos en LocalStorage
+        // Guarda los datos actualizados en LocalStorage
+        localStorage.setItem('registros', JSON.stringify(usuariosRegistrados));
 
         // Redirige al inicio de sesión
-        window.location.href = 'login.html';
+        window.location.href = 'Iniciosesion.html';
     }
 });
 
@@ -58,11 +68,6 @@ function ValidarFormulario() {
         document.getElementById('ErrorEmail').style.visibility = 'hidden';
     }
 
-    // Validar contraseña
-    if (!validarPassword(password)) {
-        esValido = false;
-    }
-
     // Validar campos adicionales
     if (!direccion || !telefono || !tarjeta || !cvv) {
         alert("Todos los campos deben estar completos.");
@@ -72,7 +77,13 @@ function ValidarFormulario() {
     return esValido;
 }
 
-// Validación de contraseña
+// Validación de contraseña en tiempo real
+document.getElementById('password').addEventListener('input', function() {
+    const password = document.getElementById('password').value;
+    validarPassword(password);
+});
+
+// Función para validar la contraseña
 function validarPassword(password) {
     const length = password.length >= 8;
     const uppercase = /[A-Z]/.test(password);
@@ -81,8 +92,6 @@ function validarPassword(password) {
     document.getElementById('length').className = length ? 'valid' : 'invalid';
     document.getElementById('uppercase').className = uppercase ? 'valid' : 'invalid';
     document.getElementById('number').className = number ? 'valid' : 'invalid';
-
-    return length && uppercase && number;
 }
 
 // Mostrar/ocultar contraseña

@@ -34,9 +34,9 @@
     
     <div class="container">
         <div class="form-container">
-            <h1>Regístrate en nuestra comunidad</h1>
+            
             <form id="registroForm" onsubmit="return ValidarFormulario()">
-                <!-- Campos principales -->
+                <h1>Regístrate en nuestra comunidad</h1>
                 <label for="usuario">Usuario</label>
                 <input type="text" id="usuario" name="usuario" required>
                 <span id="ErrorUsuario" style="visibility:hidden;color:red;">Usuario requerido</span>
@@ -48,14 +48,14 @@
                 <label for="password">Contraseña</label>
                 <div class="password-container">
                     <input type="password" id="password" name="password" required>
-                    <span class="toggle-password" onclick="togglePasswordVisibility()">Mostrar</span>
+                    <button type="button" onclick="togglePasswordVisibility()">Mostrar/Ocultar</button>
                 </div>
 
                 <div class="password-requirements-container">
                     <ul class="password-requirements">
-                        <li id="length" class="invalid">● Más de 8 caracteres</li>
-                        <li id="uppercase" class="invalid">● Una letra mayúscula</li>
-                        <li id="number" class="invalid">● Un número</li>
+                        <li id="length" class="invalid"> Más de 8 caracteres</li>
+                        <li id="uppercase" class="invalid"> Una letra mayúscula</li>
+                        <li id="number" class="invalid"> Un número</li>
                     </ul>
                 </div>
 
@@ -73,8 +73,9 @@
                 <input type="text" id="cvv" name="cvv" required maxlength="3" pattern="\d{3}">
 
                 <button type="submit" class="register-button">Crear cuenta</button>
+                <p class="login-prompt">¿Ya tenés una cuenta? <a href="Iniciosesion.html">Ingresá aquí</a></p>
             </form>
-            <p class="login-prompt">¿Ya tenés una cuenta? <a href="Iniciosesion.html">Ingresá aquí</a></p>
+            
         </div>
     </div>
 

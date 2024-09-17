@@ -1,19 +1,20 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; 
+    text-align: center;
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul {
@@ -23,21 +24,20 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
-    text-decoration: none;
 }
 
 .submenu {
-    position: relative; 
+    position: relative;
 }
 
 .submenu-items {
-    display: none; /* Oculta el submenú */
+    display: none;
     position: absolute;
-    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    top: 100%;
     left: 0;
     background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
 }
@@ -54,45 +54,41 @@ nav ul {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Muestra el submenú cuando se hace hover sobre el botón principal */
 .submenu:hover .submenu-items {
     display: block;
 }
 
-/* Opcional: Estilos en hover para los enlaces del submenú */
 .submenu-items li a:hover {
-    color: #800000; 
-}
-
-.botonesnav{
-    padding-top: 15px;
+    color: #800000;
 }
 
 nav a {
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    height: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
     color: black;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    transform: scale(1);
     margin: 10px;
 }
 
-.botonesnav {
-    padding: 10px;
-    border-radius: 15px;
-    background-color: white;
+nav a:hover {
+    color: #800000;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.botonesnav a:hover {
-    color: #800000; 
-}
-.botonesnav a.active {
-    color: white; 
+nav a.active {
+    background-color: #800000;
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15px;
 }
 
 .logo img {
@@ -102,12 +98,11 @@ nav a {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 15px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto; /* Centrado horizontalmente pero no verticalmente */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -147,48 +142,93 @@ form button {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.2s;
     width: 100%;
+    display: block; 
+    background-color: #800000; 
 }
+
 
 form button:hover {
-    background-color: #b32428;
+    background-color: #b32428; 
 }
 
-/* Responsive Adjustments */
+button.show-hide, button.create-account {
+    display: block; 
+    width: auto;
+    margin: 10px 0;
+}
+
+
 @media (max-width: 768px) {
-    form {
-        padding: 15px;
-        max-width: 100%;
-    }
-
-    form label {
-        font-size: 14px;
-    }
-
-    form input, form select {
-        padding: 8px;
-        font-size: 14px;
-    }
-
     form button {
-        font-size: 14px;
         padding: 8px 15px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
-    form label {
-        font-size: 12px;
-    }
-
-    form input, form select {
-        padding: 5px;
-        font-size: 12px;
-    }
-
     form button {
         padding: 5px 10px;
         font-size: 12px;
+    }
+}
+
+
+#passwordRequirements {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#passwordRequirements p {
+    font-size: 14px;
+    color: #800000; /* Rojo por defecto */
+    margin: 5px 0;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: #800000; /* Rojo */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #800000;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 5px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    footer {
+        font-size: 10px;
     }
 }
