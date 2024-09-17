@@ -1,8 +1,8 @@
-/* Estilos generales */
+/* Restablecer márgenes y padding */
 body {
     margin: 0;
     padding: 0;
-
+    overflow-x: hidden;
 }
 
 header {
@@ -108,39 +108,87 @@ nav a.active {
     height: 40px;
 }
 
+
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Alineación vertical para evitar espacio innecesario */
+    max-width: 100%;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.form-container {
+    width: 100%;
+    max-width: 700px; /* Limita el ancho máximo para evitar grandes espacios en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 2%;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 5px; /* Espaciado uniforme entre los elementos */
 }
 
 label {
-    margin: 10px 0 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top: 1%;
+    color: #800000;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+input {
+    width: 100%;
+    padding: 1%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    border: 1px solid #800000;
     border-radius: 5px;
-    font-size: 1em;
+}
+
+h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 2.5em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #800000;
+}
+
+button {
+    padding: 1%;
+    border-radius: 15px;
+    background-color: #800000;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    margin-top: 2%;
+}
+
+button:hover {
+    background-color: white;
+    color: #800000;
+    cursor: pointer;
+}
+
+.login-prompt {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 2%;
+}
+
+.login-prompt a {
+    color: #800000;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
 }
 
 .password-container {
     position: relative;
+}
+
+.password-container input {
+    width: calc(100% - 100px); /* Asegura el espacio para el botón */
 }
 
 .toggle-password {
@@ -149,70 +197,137 @@ input[type="text"], input[type="email"], input[type="password"] {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    color: #800000;
+}
+
+/* Estilos para los requisitos de la contraseña */
+.password-requirements-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
 }
 
 .password-requirements {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    font-size: 0.9em;
-    color: #999;
-}
-
-.invalid {
+    font-family: 'Open Sans', sans-serif;
     color: red;
+    font-size: 0.9em;
 }
 
-.valid {
+.password-requirements li {
+    margin-top: 1%;
+}
+
+.password-requirements .valid {
     color: green;
 }
 
-.register-button {
-    padding: 10px;
-    background-color: #333;
-    color: white;
+.join-club-button {
+    padding: 10px 20px;
+    background-color: #007bff;
     border: none;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.register-button:hover {
-    background-color: #575757;
+.join-club-button:hover {
+    background-color: #0056b3;
 }
 
-.login-prompt {
-    text-align: center;
-    margin-top: 20px;
+/* Estilos del formulario del Club de Socios */
+#clubForm {
+    margin-top: 2%;
+    padding-right: 2%;
+    border-radius: 10px;
 }
 
-.login-prompt a {
-    color: #333;
+#clubForm h2 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 1.5em;
+    color: #800000;
+    margin-bottom: 1%;
+}
+
+#clubForm label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top: 1%;
+    color: #800000;
+}
+
+#clubForm input {
+    width: 100%;
+    padding: 1%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    border: 1px solid #800000;
+    border-radius: 5px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.checkbox-label input {
+    margin-left: 1%;
+}
+
+span {
+    font-size: 0.75em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el enlace del Club de Socios */
+.club-link {
+    color: #007bff;
+    cursor: pointer;
     text-decoration: underline;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+.club-link:hover {
+    color: #0056b3;
 }
-
-/* Estilos para tarjeta y CVV */
-input[type="text"][name="tarjeta"],
-input[type="text"][name="cvv"] {
-    font-family: monospace;
-    letter-spacing: 1px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #800000;
-    color: white;
-    margin-top: auto;
-    width: 100%;
-    box-sizing: border-box; 
-}
-
