@@ -31,13 +31,13 @@ nav ul {
 }
 
 .submenu-items {
-    display: none; /* Oculta el submenú */
+    display: none;
     position: absolute;
-    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    top: 100%;
     left: 0;
     background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
 }
@@ -78,13 +78,11 @@ nav a {
     margin: 10px;
 }
 
-
-
 .botonesnav a:hover {
-     color: #800000;
+    color: #800000;
 }
 
-.botonesnav a.active {
+botonesnav a.active {
     background-color: #800000;
 }
 
@@ -277,10 +275,86 @@ button {
     z-index: 2;
 }
 
-
 footer {
     text-align: center;
     padding: 10px;
     background-color: #800000;
     color: white;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 5px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .titulo-home {
+        font-size: 50px;
+    }
+
+    .texto-bienvenida {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .texto-bienvenida img {
+        max-width: 150px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .texto-bienvenida p {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .HomeImagen {
+        height: 50vh;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .titulo-home {
+        font-size: 40px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .texto-bienvenida {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
 }
