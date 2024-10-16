@@ -1,0 +1,63 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#lista-recetas {
+    margin: 20px 0;
+}
+
+button.receta {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#detalles-receta img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover, .cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+}
