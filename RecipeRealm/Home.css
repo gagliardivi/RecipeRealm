@@ -194,29 +194,3 @@ nav a {
     height: auto;
     object-fit: cover;
 }
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px; /* Bordes más redondeados */
-    color: #800000; /* Color del texto en blanco */
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 16px; /* Tamaño de fuente */
-    font-weight: bold; /* Peso de la fuente */
-    transition: background-color 0.2s; /* Transición suave para el cambio de color */
-    z-index: 2;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #800000;
-    color: white;
-}
-
-button:hover {
-    background-color: #EAE5DF; /* Cambia el color de fondo al pasar el ratón */
-    color: #e41919;
-    box-shadow: black 10px;
-}
