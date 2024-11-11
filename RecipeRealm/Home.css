@@ -101,7 +101,7 @@ nav a {
  }
 
     
-
+/*
 .texto-bienvenida {
     background-color:#861d22;
     color: #fff;
@@ -129,6 +129,7 @@ nav a {
             font-size: 25px;
         }
 
+*/
 
  .imagen-completa {
             width: 100%;
@@ -147,7 +148,7 @@ nav a {
 
 .bloque {
     background-color: #861d22;
-    height: 20vh;
+    height: vh;
     width: 100%;
     position: relative;
     z-index: 1;
@@ -190,7 +191,7 @@ nav a {
 }
 
 .ImagenHome img {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
 }
