@@ -133,7 +133,7 @@ main {
     display: inline-block; 
     margin-top: 10px; 
 }
-
+/*
 .button-container {
     display: flex;
     align-items: center;
@@ -161,7 +161,7 @@ button:hover {
     color: #e41919;
     box-shadow: black 10px;
 }
-
+*/
 footer {
     text-align: center;
     padding: 10px;
