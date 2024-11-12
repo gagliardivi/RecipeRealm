@@ -25,8 +25,6 @@
                 <li><button class="botonesnav"><a href="Chef.html">Chefs</a></button></li>
                 <li class="logo"><a href="Home.html"><img src="Imágenes/logo.png" alt="RecipeRealm Logo"></a></li>
                 <li><button class="botonesnav"><a href="Recetas.html">Recetas</a></button></li>
-                
-               
                 <li class="submenu">
                     <button class="botonesnav"><a href="Registro.html">Club de Socios</a></button>
                     <ul class="submenu-items">
@@ -46,7 +44,7 @@
                     <li>½ taza de leche½ taza de crema</li><br>
                     <li>½ taza de crema</li><br>
                     <li>2 cucharadas grandes mantequilla</li><br>
-                    <li>1 cucharadita de Sal de Mar Gourmet</li><br>
+                    <li>1 cucharadita de Sal de Mar Gourmet</li><br>
                 </p>
                 <p>Ingredientes para el relleno del pastel de papas</p>
                  <p>
@@ -54,10 +52,10 @@
                     <li>500 gr de carne molida</li><br>
                     <li>1 diente de ajo picado</li><br>
                     <li>1 cebolla, picada fina</li><br>
-                    <li>1 sobre de Caldo de Carne en Polvo Gourmet</li><br>
-                    <li>1 cucharadita de Orégano deshidratado</li><br>
-                    <li>½ cucharadita de Comino molido </li><br>
-                    <li>½ cucharadita de Ají color en polvo</li><br>
+                    <li>1 sobre de Caldo de Carne en Polvo Gourmet</li><br>
+                    <li>1 cucharadita de Orégano deshidratado</li><br>
+                    <li>½ cucharadita de Comino molido </li><br>
+                    <li>½ cucharadita de Ají color en polvo</li><br>
                     <li>2 cucharadas de pasas</li><br>
                     <li>½ taza de aceitunas</li><br>
                     <li>3 huevos duros, pelados y laminados</li><br>
@@ -67,13 +65,15 @@
                 <img src="Imágenes/pasteldepapa.jpg" alt="comedordiario">
             </div>
         </section>
+        
+       
         <div class="button-empezar">
-                <a href="VerReceta.html"><button>Empezar receta</button></a>
-            </div>
-            <div class="button-guardar">
-                <a href=" "><button>Guardar receta</button></a>
-                </div>
-
+            <button onclick="window.open('verreceta.html', '_blank', 'width=800,height=600');">Empezar receta</button>
+        </div>
+        <div class="button-guardar">
+            <a href=" "><button>Guardar receta</button></a>
+        </div>
+        
         <section class="chef">
             <img src="Imágenes/fondotenedor.png" alt="Chef Background" class="chef-background">
             <a href="Chef.html" class="chef-link">
@@ -91,8 +91,50 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 RecipeRealm. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <button id="cerrarPopup">Cerrar</button>
+        </div>
+    </div>
+
+    <script> 
+      function openPopup() {
+        document.body.classList.add('popupAbierto');
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    
+        fetch('VerReceta.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('recipe-content').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('recipe-content').innerHTML = "Error al cargar la receta.";
+                console.error(error);
+            });
+    }
+
+    function closePopup() {
+        document.body.classList.remove('popupAbierto');
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    window.onload = function() {
+        function mostrarPopUp() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+
+            document.getElementById("cerrarPopup").addEventListener("click", function() {
+                popup.style.display = "none";
+            });
+        }
+    }
+    </script>
 </body>
 </html>

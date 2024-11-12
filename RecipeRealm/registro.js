@@ -1,10 +1,12 @@
 const API_URL = 'https://api.jsonbin.io/v3/b/670ee6c8e41b4d34e443669f'; // Reemplaza con tu ID de bin en Jsonbin
 const API_KEY = '$2a$10$C70KU/CxBpkg.8y88oqrzu51YZipxjkv2TNQiTruV2IhEM2qZ3Nv6'; // Reemplaza con tu clave de API de Jsonbin
 
+// Escuchar el evento de submit del formulario
 document.getElementById('registroForm').addEventListener('submit', async function(event) {
     event.preventDefault(); 
 
     if (ValidarFormulario()) {
+        // Obtenemos los valores de los campos del formulario
         const usuario = document.getElementById('usuario').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
@@ -16,16 +18,19 @@ document.getElementById('registroForm').addEventListener('submit', async functio
         // Obtenemos los usuarios ya registrados en Jsonbin
         const usuariosRegistrados = await obtenerUsuarios();
 
-        // Agregamos el nuevo usuario a la lista
+        // Lógica para definir el rol de admin basado en el email
+        const rol = (email === 'admin@ejemplo.com') ? 'admin' : 'usuario';
+
+        // Agregamos el nuevo usuario a la lista con el rol correspondiente
         usuariosRegistrados.push({
             usuario: usuario,
             email: email,
-            password: password, // Guarda la contraseña tal cual (se recomienda cifrar en producción)
+            password: password, // Guarda la contraseña tal cual (recomendado cifrar en producción)
             direccion: direccion,
             telefono: telefono,
             tarjeta: tarjeta,
             cvv: cvv,
-            rol: 'usuario'
+            rol: rol
         });
 
         // Guardamos los usuarios actualizados en Jsonbin
@@ -79,7 +84,7 @@ async function actualizarUsuarios(usuarios) {
     }
 }
 
-// Función para validar el formulario (sin cambios)
+// Función para validar el formulario
 function ValidarFormulario() {
     const usuario = document.getElementById('usuario').value;
     const email = document.getElementById('email').value;
@@ -113,7 +118,7 @@ function ValidarFormulario() {
     return esValido;
 }
 
-// Validación de contraseña
+// Validación dinámica de la contraseña
 document.getElementById('password').addEventListener('input', function() {
     const password = document.getElementById('password').value;
     validarPassword(password);
@@ -129,6 +134,7 @@ function validarPassword(password) {
     document.getElementById('number').className = number ? 'valid' : 'invalid';
 }
 
+// Mostrar u ocultar la contraseña
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById('password');
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';

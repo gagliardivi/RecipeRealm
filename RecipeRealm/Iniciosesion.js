@@ -23,8 +23,10 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     if (usuarioValido) {
         // Redirigir según el rol del usuario
         if (usuarioValido.rol === 'admin') {
+            // Redirige a admin.html si el usuario es admin
             window.location.href = 'admin.html';
         } else {
+            // Redirige a Home.html si el usuario es regular
             window.location.href = 'Home.html';
         }
     } else {
