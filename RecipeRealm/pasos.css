@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
 }
 
 header {
@@ -13,7 +15,7 @@ header {
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul {
@@ -25,7 +27,7 @@ nav ul {
     margin: 0;
 }
 
-.botonesnav{
+.botonesnav {
     padding-top: 15px;
 }
 
@@ -45,8 +47,7 @@ nav a {
 
 .botonesnav a:hover {
     background-color: #ddd; 
-    color: #800000; /
-
+    color: #800000; /* El color al pasar el ratón */
 }
 
 .botonesnav a.active {
@@ -67,22 +68,19 @@ nav a {
 main {
     padding-bottom: 20px;
     margin: 0;
-    margin-left: 200px;
+    margin-left: 200px; /* Para dejar espacio por el lado del menú */
 }
 
-
-#lista{
+#lista {
     width: 80%;
     height: auto;
     list-style-type: none;
     padding: 0;
     margin: 0;
     text-align: center;
-
 }
 
-
-.boton{
+.boton {
     background-color: #EAE5DF;
     color: #861D22;
     width: 130px;
@@ -93,7 +91,6 @@ main {
     text-decoration: none;
 }
 
-
 .button-container {
     display: flex;
     justify-content: center;
@@ -103,7 +100,6 @@ main {
 
 button {
     padding: 10px 20px;
-    background-color: #EAE5DF; 
     border: none;
     border-radius: 25px; 
     color: #800000; 
@@ -123,7 +119,7 @@ button:hover {
     box-shadow: black 10px;
 }
 
-h1{
+h1 {
     color: #861D22;
     text-align: center;
     text-decoration: none;
@@ -149,7 +145,6 @@ h1{
     object-fit: cover; 
     margin-top: 20px;
 }
-
 
 footer {
     text-align: center;
