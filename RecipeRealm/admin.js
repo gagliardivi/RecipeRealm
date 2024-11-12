@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlImagenInput = document.getElementById('url-imagen');
     const busquedaRecetaInput = document.getElementById('busqueda-receta');
     const listaRecetasAdmin = document.getElementById('lista-recetas-admin');
+    const btnVolverHome = document.createElement('button'); // Crear botón de "Volver al Home"
+    
+    // Estilo del botón de "Volver al Home"
+    btnVolverHome.textContent = 'Volver al Home';
+    btnVolverHome.classList.add('btn-volver-home');
+    btnVolverHome.onclick = () => {
+        window.location.href = 'Home.html'; // Redirigir al Home
+    };
+
+    // Añadir el botón al header
+    const header = document.querySelector('header');
+    header.appendChild(btnVolverHome);
 
     let modoEdicionIndex = null; 
 
@@ -63,17 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const recetasGuardadas = JSON.parse(localStorage.getItem('recetas')) || [];
         
         if (modoEdicionIndex !== null) {
-           
             recetasGuardadas[modoEdicionIndex] = receta;
             modoEdicionIndex = null; 
         } else {
-           
             recetasGuardadas.push(receta);
         }
 
         localStorage.setItem('recetas', JSON.stringify(recetasGuardadas));
 
-      
         nombreRecetaInput.value = '';
         urlImagenInput.value = '';
         agregarRecetaForm.reset();
@@ -87,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nombreRecetaInput.value = receta.nombre;
         urlImagenInput.value = receta.imagen;
 
-      
         modoEdicionIndex = index;
     }
 

@@ -6,9 +6,33 @@ body {
 }
 
 header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Distribuye el contenido: título a la izquierda, botón a la derecha */
+    align-items: center;
     padding: 20px;
     background-color: #800000;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
+
+.btn-volver-home {
+    padding: 10px 20px;
+    background-color: #EAE5DF;
+    border: none;
+    border-radius: 25px;
+    color: #800000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    margin-left: auto; /* Alinea el botón a la derecha */
+}
+
+.btn-volver-home:hover {
+    background-color: #e41919;
     color: white;
 }
 
