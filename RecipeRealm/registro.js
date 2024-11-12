@@ -1,206 +1,136 @@
-// Función para alternar la visibilidad del formulario del Club de Socios
-function toggleClubForm() {
-    const clubForm = document.getElementById('clubForm');
-    clubForm.style.display = clubForm.style.display === 'none' ? 'block' : 'none';
-}
+const API_URL = 'https://api.jsonbin.io/v3/b/670ee6c8e41b4d34e443669f'; // Reemplaza con tu ID de bin en Jsonbin
+const API_KEY = '$2a$10$C70KU/CxBpkg.8y88oqrzu51YZipxjkv2TNQiTruV2IhEM2qZ3Nv6'; // Reemplaza con tu clave de API de Jsonbin
 
-// Función para alternar la visibilidad de la contraseña
-function togglePasswordVisibility() {
-    const passwordInput = document.getElementById('password');
-    const toggleText = document.querySelector('.toggle-password');
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        toggleText.textContent = 'Ocultar';
-    } else {
-        passwordInput.type = 'password';
-        toggleText.textContent = 'Mostrar';
-    }
-}
+document.getElementById('registroForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); 
 
-// Función de validación del formulario
-function ValidarFormulario() {
-    const usuario = document.getElementById("usuario").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const contraseña = document.getElementById("password").value;
-    const suscripcionClub = document.getElementById("suscripcionClub")?.checked;
-    const telefono = document.getElementById("telefono")?.value.trim();
-    let validador = true;
-
-    // Validar el usuario
-    if (usuario.length > 1) {
-        document.getElementById("ErrorUsuario").style.visibility = "hidden";
-    } else {
-        validador = false;
-        document.getElementById("ErrorUsuario").style.visibility = "visible";
-    }
-
-    // Validar el correo
-    if (email.length > 1) {
-        document.getElementById("ErrorEmail").style.visibility = "hidden";
-    } else {
-        validador = false;
-        document.getElementById("ErrorEmail").style.visibility = "visible";
-    }
-
-    // Validar la contraseña
-    const lengthRequirement = document.getElementById('length');
-    const uppercaseRequirement = document.getElementById('uppercase');
-    const numberRequirement = document.getElementById('number');
-
-    if (contraseña.length > 8 && /[A-Z]/.test(contraseña) && /\d/.test(contraseña)) {
-        lengthRequirement.classList.remove('invalid');
-        lengthRequirement.classList.add('valid');
-        uppercaseRequirement.classList.remove('invalid');
-        uppercaseRequirement.classList.add('valid');
-        numberRequirement.classList.remove('invalid');
-        numberRequirement.classList.add('valid');
-    } else {
-        validador = false;
-        lengthRequirement.classList.toggle('valid', contraseña.length > 8);
-        lengthRequirement.classList.toggle('invalid', contraseña.length <= 8);
-        uppercaseRequirement.classList.toggle('valid', /[A-Z]/.test(contraseña));
-        uppercaseRequirement.classList.toggle('invalid', !/[A-Z]/.test(contraseña));
-        numberRequirement.classList.toggle('valid', /\d/.test(contraseña));
-        numberRequirement.classList.toggle('invalid', !/\d/.test(contraseña));
-    }
-
-    // Validar teléfono si se selecciona la suscripción al Club
-    if (suscripcionClub) {
-        const telefonoRegex = /^(11|15)\d{8}$/;
-        if (!telefonoRegex.test(telefono)) {
-            validador = false;
-            document.getElementById("ErrorTelefono").style.visibility = "visible";
-        } else {
-            document.getElementById("ErrorTelefono").style.visibility = "hidden";
-        }
-    }
-
-    return validador;
-}
-
-// Función para abrir el modal
-function openModal() {
-    const modal = document.getElementById('clubModal');
-    modal.style.display = 'block';
-}
-
-// Función para cerrar el modal
-function closeModal() {
-    const modal = document.getElementById('clubModal');
-    modal.style.display = 'none';
-}
-
-// Función para formatear el número de tarjeta con guiones
-function formatearTarjeta(value) {
-    // Eliminar todos los caracteres no numéricos
-    value = value.replace(/\D/g, '');
-
-    // Agregar guiones después de cada 4 dígitos
-    const partes = [];
-    for (let i = 0; i < value.length; i += 4) {
-        partes.push(value.substring(i, i + 4));
-    }
-
-    return partes.join('-');
-}
-
-// Función para manejar el evento de entrada en el campo de tarjeta
-function manejarInputTarjeta(event) {
-    const input = event.target;
-    input.value = formatearTarjeta(input.value);
-}
-
-// Función para guardar los datos de registro
-function guardarDatosRegistro(usuario, email, contraseña, esAdmin) {
-    // Creamos un objeto con los datos del usuario
-    const datosUsuario = {
-        usuario: usuario,
-        email: email,
-        contraseña: contraseña,
-        esAdmin: esAdmin
-    };
-
-    // Almacenamos el objeto en localStorage (puede usarse sessionStorage también si se prefiere)
-    localStorage.setItem(email, JSON.stringify(datosUsuario));
-}
-
-// Función para guardar la información adicional del modal
-function guardarInformacionAdicional() {
-    const direccion = document.getElementById('direccion').value.trim();
-    const telefonoClub = document.getElementById('telefonoClub').value.trim();
-    const tarjeta = document.getElementById('tarjeta').value.trim();
-    const cvv = document.getElementById('cvv').value.trim();
-
-    // Validar el formato del número de tarjeta y CVV
-    const tarjetaRegex = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
-    const cvvRegex = /^\d{3}$/;
-
-    if (!tarjetaRegex.test(tarjeta)) {
-        alert('Número de tarjeta inválido. Debe tener el formato XXXX-XXXX-XXXX-XXXX.');
-        return;
-    }
-
-    if (!cvvRegex.test(cvv)) {
-        alert('CVV inválido. Debe tener exactamente 3 dígitos.');
-        return;
-    }
-
-    if (direccion && telefonoClub) {
-        // Obtener el usuario actual (debe definirse cómo obtener este dato)
-        const usuarioEmail = document.getElementById('email').value.trim();
-        
-        // Recuperar los datos del usuario del localStorage
-        const datosUsuario = JSON.parse(localStorage.getItem(usuarioEmail));
-        if (datosUsuario) {
-            // Agregar la información adicional
-            datosUsuario.direccion = direccion;
-            datosUsuario.telefono = telefonoClub;
-            datosUsuario.tarjeta = tarjeta;
-            datosUsuario.cvv = cvv;
-
-            // Guardar de nuevo en localStorage
-            localStorage.setItem(usuarioEmail, JSON.stringify(datosUsuario));
-
-            // Cerrar el modal
-            closeModal();
-            alert('Información adicional guardada exitosamente.');
-        } else {
-            alert('No se encontraron datos para este usuario.');
-        }
-    } else {
-        alert('Por favor complete todos los campos.');
-    }
-}
-
-// Función para manejar el registro
-function manejarRegistro() {
     if (ValidarFormulario()) {
-        const usuario = document.getElementById("usuario").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const contraseña = document.getElementById("password").value;
+        const usuario = document.getElementById('usuario').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const direccion = document.getElementById('direccion').value;
+        const telefono = document.getElementById('telefono').value;
+        const tarjeta = document.getElementById('tarjeta').value;
+        const cvv = document.getElementById('cvv').value;
 
-        // Diferenciar si es admin o no
-        let esAdmin = false;
-        if (email === "admin@gmail.com") {
-            esAdmin = true;
-        }
+        // Obtenemos los usuarios ya registrados en Jsonbin
+        const usuariosRegistrados = await obtenerUsuarios();
 
-        // Guardamos los datos en localStorage
-        guardarDatosRegistro(usuario, email, contraseña, esAdmin);
+        // Agregamos el nuevo usuario a la lista
+        usuariosRegistrados.push({
+            usuario: usuario,
+            email: email,
+            password: password, // Guarda la contraseña tal cual (se recomienda cifrar en producción)
+            direccion: direccion,
+            telefono: telefono,
+            tarjeta: tarjeta,
+            cvv: cvv,
+            rol: 'usuario'
+        });
 
-        // Abrir el modal para información adicional
-        openModal();
+        // Guardamos los usuarios actualizados en Jsonbin
+        await actualizarUsuarios(usuariosRegistrados);
+
+        // Redirige al usuario a la página de inicio de sesión
+        window.location.href = 'Iniciosesion.html';
     }
-}
-
-// Asignamos la función al evento de submit del formulario
-document.getElementById("registroForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío tradicional del formulario
-    manejarRegistro();
 });
 
-// Asignamos el formato automático del número de tarjeta al campo correspondiente
-document.getElementById('tarjeta').addEventListener('input', manejarInputTarjeta);
+// Función para obtener los usuarios de Jsonbin
+async function obtenerUsuarios() {
+    try {
+        const response = await fetch(API_URL, {
+            method: 'GET',
+            headers: {
+                'X-Master-Key': API_KEY
+            }
+        });
+        
+        if (response.ok) {
+            const data = await response.json();
+            return data.record.usuarios || []; // Devuelve los usuarios o un arreglo vacío
+        } else {
+            console.error("Error al obtener los usuarios");
+            return [];
+        }
+    } catch (error) {
+        console.error("Hubo un problema al obtener los usuarios:", error);
+        return [];
+    }
+}
 
-// Asignar la función al botón de guardar información adicional en el modal
-document.getElementById('guardarInformacion').addEventListener('click', guardarInformacionAdicional);
+// Función para actualizar los usuarios en Jsonbin
+async function actualizarUsuarios(usuarios) {
+    try {
+        const response = await fetch(API_URL, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': API_KEY
+            },
+            body: JSON.stringify({ usuarios: usuarios })
+        });
+
+        if (!response.ok) {
+            console.error("Error al actualizar los usuarios");
+        }
+    } catch (error) {
+        console.error("Hubo un problema al actualizar los usuarios:", error);
+    }
+}
+
+// Función para validar el formulario (sin cambios)
+function ValidarFormulario() {
+    const usuario = document.getElementById('usuario').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const direccion = document.getElementById('direccion').value;
+    const telefono = document.getElementById('telefono').value;
+    const tarjeta = document.getElementById('tarjeta').value;
+    const cvv = document.getElementById('cvv').value;
+
+    let esValido = true;
+
+    if (!usuario) {
+        document.getElementById('ErrorUsuario').style.visibility = 'visible';
+        esValido = false;
+    } else {
+        document.getElementById('ErrorUsuario').style.visibility = 'hidden';
+    }
+
+    if (!email) {
+        document.getElementById('ErrorEmail').style.visibility = 'visible';
+        esValido = false;
+    } else {
+        document.getElementById('ErrorEmail').style.visibility = 'hidden';
+    }
+
+    if (!direccion || !telefono || !tarjeta || !cvv) {
+        alert("Todos los campos deben estar completos.");
+        esValido = false;
+    }
+
+    return esValido;
+}
+
+// Validación de contraseña
+document.getElementById('password').addEventListener('input', function() {
+    const password = document.getElementById('password').value;
+    validarPassword(password);
+});
+
+function validarPassword(password) {
+    const length = password.length >= 8;
+    const uppercase = /[A-Z]/.test(password);
+    const number = /[0-9]/.test(password);
+
+    document.getElementById('length').className = length ? 'valid' : 'invalid';
+    document.getElementById('uppercase').className = uppercase ? 'valid' : 'invalid';
+    document.getElementById('number').className = number ? 'valid' : 'invalid';
+}
+
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+}

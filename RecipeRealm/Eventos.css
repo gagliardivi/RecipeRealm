@@ -23,7 +23,6 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
-    text-decoration: none;
 }
 
 .submenu {
@@ -233,6 +232,7 @@ a {
     font-weight: bold;
 }
 
-a:hover {
+
+#asuscribite:hover {
     text-decoration:underline;
 }

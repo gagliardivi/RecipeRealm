@@ -1,22 +1,20 @@
-/* Restablecer márgenes y padding */
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #f1f1f1;
+    overflow-x: hidden;
 }
-
+/*
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    text-align: center; 
+    text-align: center;
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul {
@@ -29,17 +27,17 @@ nav ul {
 }
 
 .submenu {
-    position: relative; 
+    position: relative;
 }
 
 .submenu-items {
-    display: none; /* Oculta el submenú */
+    display: none;
     position: absolute;
-    top: 100%; /* Alinea el submenú justo debajo del botón principal */
+    top: 100%;
     left: 0;
     background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una pequeña sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
 }
@@ -56,274 +54,131 @@ nav ul {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Muestra el submenú cuando se hace hover sobre el botón principal */
 .submenu:hover .submenu-items {
     display: block;
 }
 
-/* Opcional: Estilos en hover para los enlaces del submenú */
 .submenu-items li a:hover {
-    color: #800000; 
-}
-
-.botonesnav{
-    padding-top: 15px;
+    color: #800000;
 }
 
 nav a {
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    height: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
     color: black;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    transform: scale(1);
     margin: 10px;
 }
 
-.botonesnav {
-    padding: 10px;
-    border-radius: 15px;
-    background-color: white;
+nav a:hover {
+    color: #800000;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.botonesnav a:hover {
-    color: #800000; 
-}
-.botonesnav a.active {
-    background-color: #800000; 
-    color: white; 
+nav a.active {
+    background-color: #800000;
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1%;
+    padding-bottom: 15px;
 }
 
 .logo img {
-    height: 40px
+    height: 40px;
 }
-
-.container {
-    display: flex;
-    flex-direction: column; /* Alineación vertical para evitar espacio innecesario */
-    max-width: 100%;
-    box-sizing: border-box; /* Incluye padding y border en el ancho total */
-}
-
-.form-container {
-    width: 100%;
-    max-width: 700px; /* Limita el ancho máximo para evitar grandes espacios en pantallas grandes */
-    margin: 0 auto; /* Centra el contenedor */
-    padding: 2%;
-}
-
+*/
 form {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Espaciado uniforme entre los elementos */
-}
-
-label {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    margin-top: 1%;
-    color: #800000;
-}
-
-input {
-    width: 100%;
-    padding: 1%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    border: 1px solid #800000;
-    border-radius: 5px;
-}
-
-h1 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 2.5em;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    color: #800000;
-}
-
-button {
-    padding: 1%;
+    padding: 20px;
+    background-color: #f0f0f0;
     border-radius: 15px;
-    background-color: #800000;
+    max-width: 500px;
+    margin: 20px auto;  
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    font-family: 'Open Sans', sans-serif;
+    color: #800000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #800000;
+    border-radius: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #EAE5DF;
+    box-sizing: border-box;
+}
+
+form input::placeholder {
+    color: #999;
+}
+/*
+form button {
+    padding: 10px 20px;
     color: white;
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
-    margin-top: 2%;
-}
-
-button:hover {
-    background-color: white;
-    color: #800000;
+    border-radius: 15px;
     cursor: pointer;
+    width: 100%;
+    display: block; 
+    background-color: #800000; 
 }
 
-.login-prompt {
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 2%;
+
+form button:hover {
+    background-color: #b32428; 
 }
 
-.login-prompt a {
-    color: #800000;
-    text-decoration: none;
+ button.show-hide, button.create-account {
+    display: block; 
+    width: auto;
+    margin: 10px 0;
+} */
+
+
+
+
+
+#passwordRequirements {
+    width: 100%;
+    margin-top: 10px;
 }
 
-.login-prompt a:hover {
-    text-decoration: underline;
+#passwordRequirements p {
+    font-size: 14px;
+    color: #800000; 
+    margin: 5px 0;
 }
 
-.password-container {
-    position: relative;
-}
-
-.password-container input {
-    width: calc(100% - 100px); /* Asegura el espacio para el botón */
-}
-
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #800000;
-}
-
-/* Estilos para los requisitos de la contraseña */
-.password-requirements-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 2%;
-}
-
-.password-requirements {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    color: red;
-    font-size: 0.9em;
-}
-
-.password-requirements li {
-    margin-top: 1%;
-}
-
-.password-requirements .valid {
+.valid {
     color: green;
 }
 
-.join-club-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.join-club-button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos del formulario del Club de Socios */
-#clubForm {
-    margin-top: 2%;
-    padding-right: 2%;
-    border-radius: 10px;
-}
-
-#clubForm h2 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 1.5em;
-    color: #800000;
-    margin-bottom: 1%;
-}
-
-#clubForm label {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    margin-top: 1%;
-    color: #800000;
-}
-
-#clubForm input {
-    width: 100%;
-    padding: 1%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    border: 1px solid #800000;
-    border-radius: 5px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    margin-top: 2%;
-}
-
-.checkbox-label input {
-    margin-left: 1%;
-}
-
-span {
-    font-size: 0.75em;
-    font-family: 'Open Sans', sans-serif;
-}
-
-/* Modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-.club-link {
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.club-link:hover {
-    color: #0056b3;
+.invalid {
+    color: #800000; 
 }
 
 footer {
@@ -331,8 +186,5 @@ footer {
     padding: 10px;
     background-color: #800000;
     color: white;
-    margin-top: auto;
-    width: 100%;
-    box-sizing: border-box; 
 }
 

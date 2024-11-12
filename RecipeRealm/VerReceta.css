@@ -122,6 +122,11 @@ button:hover {
     box-shadow: black 10px;
 }
 
+
+
+.paso-container{
+}
+
 #paso-imagen {
     transition: transform 0.5s ease;
 }

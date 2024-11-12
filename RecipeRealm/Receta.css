@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/*
 header {
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ nav a.active {
 .logo img {
     height: 40px;
 }
-
+*/
 main {
     padding-bottom: 20px;
     margin: 0;
@@ -262,16 +262,28 @@ button {
     align-items: center;
 }
 
-.button-empezarguardar {
+.button-empezar {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.button-empezarguardar button {
+.button-guardar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.button-empezar button {
     margin: 0 10px;
 }
+
+.button-guardar button {
+    margin: 0 10px;
+}
+
 
 footer {
     text-align: center;

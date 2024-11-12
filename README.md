@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<h1> Reacipe Realm  <a href="https://recipe-realm-delta.vercel.app/">¡Mirá el proyecto acá!</a></h1> 
+<h1> Reacipe Realm  <a href="https://recipe-realm-delta.vercel.app/Home.html">¡Mirá el proyecto acá!</a></h1> 
 <p>En RecipeRealm, te conectamos con los mejores chefs y sus recetas exclusivas, promoviendo al mismo tiempo los destacados restaurantes de un distinguido patio gastronómico.</p> 
 <ul>  
   <li>Manual de marca</li>
